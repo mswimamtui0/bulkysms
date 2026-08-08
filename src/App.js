@@ -135,7 +135,7 @@ const App = () => {
       {/* ===== NAVBAR ===== */}
       <nav className={`navbar ${scrolled ? 'scrolled' : ''}`}>
         <div className="container">
-          <a href="#" className="logo">bulky<span>SMS</span></a>
+          <a href="/" className="logo">bulky<span>SMS</span></a>
           <ul className="nav-links">
             <li><a href="#services">Services</a></li>
             <li><a href="#pricing">Pricing</a></li>
@@ -438,10 +438,18 @@ const App = () => {
               <div className="contact-social">
                 <h4>Follow Us</h4>
                 <div className="social-links">
-                  <a href="#" aria-label="Facebook"><i className="fab fa-facebook"></i></a>
-                  <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-                  <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
-                  <a href="#" aria-label="LinkedIn"><i className="fab fa-linkedin"></i></a>
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+                    <i className="fab fa-facebook"></i>
+                  </a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+                    <i className="fab fa-twitter"></i>
+                  </a>
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+                    <i className="fab fa-instagram"></i>
+                  </a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i className="fab fa-linkedin"></i>
+                  </a>
                 </div>
               </div>
             </div>
@@ -464,8 +472,6 @@ const App = () => {
                   <div className="form-group">
                     <input type="email" id="formEmail" placeholder="Email Address" />
                   </div>
-                  
-                  {/* ✅ Service dropdown REMOVED */}
                   
                   <div className="form-group">
                     <textarea id="formMessage" placeholder="Tell us about your needs..." rows="4" required></textarea>
