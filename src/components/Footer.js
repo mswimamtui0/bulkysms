@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -6,29 +7,29 @@ const Footer = () => {
       <div className="container">
         <div className="footer-grid">
           <div className="footer-brand">
-            <a href="#" className="logo">bulky<span>SMS</span></a>
+            <Link to="/" className="logo">bulky<span>SMS</span></Link>
             <p>Dar es Salaam, Tanzania<br />Global SMS and WhatsApp messaging solutions for businesses.</p>
           </div>
           <div className="footer-links">
             <h5>Solutions</h5>
-            <a href="#services">Internet SMS</a>
-            <a href="#services">WhatsApp Business</a>
-            <a href="#services">SIM-Based SMS</a>
-            <a href="#services">AI Chatbot</a>
+            <Link to="/services">Internet SMS</Link>
+            <Link to="/services">WhatsApp Business</Link>
+            <Link to="/services">SIM-Based SMS</Link>
+            <Link to="/services">AI Chatbot</Link>
           </div>
           <div className="footer-links">
             <h5>Company</h5>
-            <a href="#">About</a>
-            <a href="#">Careers</a>
-            <a href="#">Blog</a>
-            <a href="#contact">Contact</a>
+            <Link to="/">About Us</Link>
+            <Link to="/">Careers</Link>
+            <Link to="/blog">Blog</Link>
+            <Link to="/contact">Contact</Link>
           </div>
           <div className="footer-links">
             <h5>Support</h5>
-            <a href="#">Documentation</a>
-            <a href="#">API Reference</a>
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
+            <Link to="/help">FAQ</Link>
+            <Link to="/contact">Contact Support</Link>
+            <Link to="/">Privacy Policy</Link>
+            <Link to="/">Terms of Service</Link>
           </div>
         </div>
         <div className="footer-bottom">
