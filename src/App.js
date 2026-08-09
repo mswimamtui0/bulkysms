@@ -15,7 +15,7 @@ const App = () => {
       date: 'August 9, 2026',
       author: 'Bulkysms Team',
       readTime: '5 min read',
-      image: '📱'
+      image: ''  // emoji removed
     },
     {
       id: 2,
@@ -26,7 +26,7 @@ const App = () => {
       date: 'August 8, 2026',
       author: 'Bulkysms Team',
       readTime: '7 min read',
-      image: '💬'
+      image: ''  // emoji removed
     },
     {
       id: 3,
@@ -37,7 +37,7 @@ const App = () => {
       date: 'August 7, 2026',
       author: 'Bulkysms Team',
       readTime: '6 min read',
-      image: '📈'
+      image: ''  // emoji removed
     },
     {
       id: 4,
@@ -48,7 +48,7 @@ const App = () => {
       date: 'August 6, 2026',
       author: 'Bulkysms Team',
       readTime: '4 min read',
-      image: '🔐'
+      image: ''  // emoji removed
     }
   ]);
 
@@ -229,11 +229,11 @@ const App = () => {
           
           <div className="hero-visual">
             <div className="hero-card">
-              <div className="stat-row"><span className="label">🌍 Global Coverage</span><span className="value">213 Countries</span></div>
-              <div className="stat-row"><span className="label">📡 Networks</span><span className="value">800+</span></div>
-              <div className="stat-row"><span className="label">⚡ Average Speed</span><span className="value">2.3s</span></div>
-              <div className="stat-row"><span className="label">📊 Monthly Volume</span><span className="value">&gt;10M</span></div>
-              <div className="stat-row"><span className="label">✅ Delivery Rate</span><span className="value">98.4%</span></div>
+              <div className="stat-row"><span className="label">Global Coverage</span><span className="value">213 Countries</span></div>
+              <div className="stat-row"><span className="label">Networks</span><span className="value">800+</span></div>
+              <div className="stat-row"><span className="label">Average Speed</span><span className="value">2.3s</span></div>
+              <div className="stat-row"><span className="label">Monthly Volume</span><span className="value">&gt;10M</span></div>
+              <div className="stat-row"><span className="label">Delivery Rate</span><span className="value">98.4%</span></div>
               <div className="gold-bar"><div className="fill"></div></div>
               <div className="card-note">Enterprise-grade reliability across all networks</div>
             </div>
@@ -402,7 +402,7 @@ const App = () => {
       </section>
 
       {/* ============================================================
-          PROFESSIONAL BLOG SECTION - FULL FUNCTIONALITY
+          PROFESSIONAL BLOG SECTION
           ============================================================ */}
       <section className="blog-section" id="blog">
         <div className="container">
@@ -426,7 +426,7 @@ const App = () => {
             {blogPosts.map((post) => (
               <div className={`blog-card ${expandedPost === post.id ? 'expanded' : ''}`} key={post.id}>
                 <div className="blog-card-header">
-                  <div className="blog-image">{post.image}</div>
+                  {post.image && <div className="blog-image">{post.image}</div>}  {/* emoji removed – won't render */}
                   <div className="blog-meta">
                     <span className="blog-category">{post.category}</span>
                     <span className="blog-date">{post.date}</span>
