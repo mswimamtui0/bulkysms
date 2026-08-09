@@ -10,45 +10,41 @@ const App = () => {
       id: 1,
       title: 'Why Bulk SMS is the Most Effective Marketing Channel in Tanzania',
       excerpt: 'Discover why businesses across Tanzania are choosing bulk SMS over social media and email to reach their customers instantly.',
-      content: 'In today\'s fast-paced digital world, businesses need to communicate with customers quickly and effectively. Bulk SMS offers an unparalleled 98% open rate compared to email\'s 20%...',
+      content: 'In today\'s fast-paced digital world, businesses need to communicate with customers quickly and effectively. Bulk SMS offers an unparalleled 98% open rate compared to email\'s 20%. This means your message is almost guaranteed to be seen. For Tanzanian businesses, SMS is particularly effective because of high mobile phone penetration and reliable network coverage across the country.',
       category: 'Marketing Tips',
       date: 'August 9, 2026',
       author: 'Bulkysms Team',
-      readTime: '5 min read',
-      image: ''  // emoji removed
+      readTime: '5 min read'
     },
     {
       id: 2,
       title: 'WhatsApp Business vs. SMS: Which is Better for Your Business?',
       excerpt: 'Compare WhatsApp Business and traditional SMS to determine the best communication channel for your specific business needs.',
-      content: 'Both WhatsApp Business and SMS have unique strengths. SMS excels in delivery reliability and reach, while WhatsApp offers rich media and interactive features. Here\'s how to choose...',
+      content: 'Both WhatsApp Business and SMS have unique strengths. SMS excels in delivery reliability and reach, while WhatsApp offers rich media and interactive features. For time-sensitive notifications like OTPs and payment reminders, SMS is more reliable. For customer engagement and support, WhatsApp Business offers a richer experience. Many businesses use both channels for maximum impact.',
       category: 'WhatsApp Business',
       date: 'August 8, 2026',
       author: 'Bulkysms Team',
-      readTime: '7 min read',
-      image: ''  // emoji removed
+      readTime: '7 min read'
     },
     {
       id: 3,
       title: 'How to Boost Sales by 40% with SMS Marketing',
       excerpt: 'Learn proven strategies to increase your sales using targeted SMS campaigns that convert customers into loyal buyers.',
-      content: 'SMS marketing has proven to be one of the most effective sales channels. This guide covers segmentation, timing, and crafting messages that convert...',
+      content: 'SMS marketing has proven to be one of the most effective sales channels. This guide covers segmentation, timing, and crafting messages that convert. Research shows that personalized SMS messages have a 45% response rate. By segmenting your audience and sending targeted offers, you can significantly increase your conversion rates and build lasting customer relationships.',
       category: 'Sales Strategies',
       date: 'August 7, 2026',
       author: 'Bulkysms Team',
-      readTime: '6 min read',
-      image: ''  // emoji removed
+      readTime: '6 min read'
     },
     {
       id: 4,
       title: 'OTP Delivery: Why Businesses Need Secure Authentication',
       excerpt: 'Learn why One-Time Password (OTP) delivery via SMS and WhatsApp is essential for securing your customers\' accounts.',
-      content: 'Cyber threats are on the rise. OTP delivery via SMS and WhatsApp provides an additional layer of security that protects both your business and your customers...',
+      content: 'Cyber threats are on the rise. OTP delivery via SMS and WhatsApp provides an additional layer of security that protects both your business and your customers. With 2FA becoming a standard security practice, integrating OTP delivery into your authentication flow is no longer optional. It builds trust and reduces the risk of unauthorized access to sensitive data.',
       category: 'Security',
       date: 'August 6, 2026',
       author: 'Bulkysms Team',
-      readTime: '4 min read',
-      image: ''  // emoji removed
+      readTime: '4 min read'
     }
   ]);
 
@@ -69,7 +65,7 @@ const App = () => {
   };
 
   // ============================================================
-  // ✅ CONTACT FORM - DIRECT WHATSAPP
+  // CONTACT FORM - DIRECT WHATSAPP
   // ============================================================
   const sendToWhatsApp = (e) => {
     e.preventDefault();
@@ -80,24 +76,24 @@ const App = () => {
     const message = document.getElementById('formMessage').value;
     
     if (!name || !phone || !message) {
-      alert('⚠️ Please fill in all required fields.');
+      alert('Please fill in all required fields.');
       return;
     }
     
     const whatsappNumber = '255757170544';
     
-    const text = `*New Bulkysms Inquiry*%0A%0A
-*Name:* ${name}%0A
-*Phone:* ${phone}%0A
-*Email:* ${email}%0A
+    const text = `New Bulkysms Inquiry%0A%0A
+Name: ${name}%0A
+Phone: ${phone}%0A
+Email: ${email}%0A
 %0A
-*Message:*%0A${message}`;
+Message:%0A${message}`;
     
     const url = `https://wa.me/${whatsappNumber}?text=${text}`;
     window.open(url, '_blank');
     
     document.getElementById('contactForm').reset();
-    alert('✅ Opening WhatsApp... Our team will respond shortly!');
+    alert('Opening WhatsApp... Our team will respond shortly!');
   };
 
   const faqs = [
@@ -109,17 +105,17 @@ const App = () => {
   ];
 
   const features = [
-    { icon: 'fa-headset', title: 'Dedicated Support', desc: 'Our team is committed to helping you get your messages delivered.' },
-    { icon: 'fa-route', title: 'Reliable Delivery', desc: 'We route your messages through the most reliable pathways available.' },
-    { icon: 'fa-gavel', title: 'Clear Compliance', desc: 'Easy access to regional regulations and industry best practices.' },
-    { icon: 'fa-user-check', title: 'One Account Access', desc: 'Access all our SMS and WhatsApp solutions with a single account.' }
+    { title: 'Dedicated Support', desc: 'Our team is committed to helping you get your messages delivered.' },
+    { title: 'Reliable Delivery', desc: 'We route your messages through the most reliable pathways available.' },
+    { title: 'Clear Compliance', desc: 'Easy access to regional regulations and industry best practices.' },
+    { title: 'One Account Access', desc: 'Access all our SMS and WhatsApp solutions with a single account.' }
   ];
 
   const services = [
-    { icon: 'fa-globe-africa', title: 'Internet SMS', desc: 'Send messages directly to mobile phones via our global network. Custom sender IDs and real-time delivery tracking.', features: ['213+ Countries', '800+ Networks', 'Custom Sender ID', 'API Integration'] },
-    { icon: 'fa-whatsapp', title: 'WhatsApp Business', desc: 'Connect with customers on WhatsApp. Send notifications, promotions, and updates with official templates.', features: ['Global Reach', 'Template Management', 'Multi-Account', 'Automated Campaigns'] },
-    { icon: 'fa-sim-card', title: 'SIM-Based SMS', desc: 'Use your own SIM cards for cost-effective messaging. Perfect for local and regional campaigns.', features: ['Flat Rate Pricing', 'Multiple SIM Support', 'Two-Way Messaging', 'Mobile App Sync'] },
-    { icon: 'fa-comment-dots', title: 'AI Chatbot Assistant', desc: 'Automate customer interactions on WhatsApp. Capture leads and process orders without coding.', features: ['No-Code Builder', '24/7 Availability', 'Lead Generation', 'Order Processing'] }
+    { title: 'Internet SMS', desc: 'Send messages directly to mobile phones via our global network. Custom sender IDs and real-time delivery tracking.', features: ['213+ Countries', '800+ Networks', 'Custom Sender ID', 'API Integration'] },
+    { title: 'WhatsApp Business', desc: 'Connect with customers on WhatsApp. Send notifications, promotions, and updates with official templates.', features: ['Global Reach', 'Template Management', 'Multi-Account', 'Automated Campaigns'] },
+    { title: 'SIM-Based SMS', desc: 'Use your own SIM cards for cost-effective messaging. Perfect for local and regional campaigns.', features: ['Flat Rate Pricing', 'Multiple SIM Support', 'Two-Way Messaging', 'Mobile App Sync'] },
+    { title: 'AI Chatbot Assistant', desc: 'Automate customer interactions on WhatsApp. Capture leads and process orders without coding.', features: ['No-Code Builder', '24/7 Availability', 'Lead Generation', 'Order Processing'] }
   ];
 
   const pricingPlans = [
@@ -128,11 +124,11 @@ const App = () => {
       price: 'TZS 16', 
       sub: '/ msg',
       desc: 'Volume-based pricing for local delivery',
-      features: ['1 – 5,000: TZS 16', '5,001 – 50,000: TZS 15', '50,001 – 100,000: TZS 14', '100,001 – 500,000: TZS 13', '500,001+: TZS 12'],
+      features: ['1 to 5,000: TZS 16', '5,001 to 50,000: TZS 15', '50,001 to 100,000: TZS 14', '100,001 to 500,000: TZS 13', '500,001+: TZS 12'],
       featured: false
     },
     { 
-      name: '⭐ Mobile SMS', 
+      name: 'Mobile SMS', 
       price: 'TZS 5', 
       sub: 'flat rate',
       desc: 'Global coverage using your SIM cards',
@@ -160,17 +156,17 @@ const App = () => {
   const networks = ['South Africa', 'Germany', 'United Kingdom', 'USA', 'Singapore', 'Finland', 'Canada', 'Rep. Ireland', 'Denmark', 'Russia', 'Norway', '170+ Other Countries'];
 
   const steps = [
-    { icon: 'fa-phone-alt', title: 'Contact Us', desc: 'Reach out via phone, WhatsApp, or our contact form' },
-    { icon: 'fa-comments', title: 'We Discuss Your Needs', desc: 'Our team listens and recommends the best solution' },
-    { icon: 'fa-cogs', title: 'We Set You Up', desc: 'We handle the technical setup for your account' },
-    { icon: 'fa-rocket', title: 'Start Sending', desc: 'You begin sending messages to your customers' }
+    { title: 'Contact Us', desc: 'Reach out via phone, WhatsApp, or our contact form' },
+    { title: 'We Discuss Your Needs', desc: 'Our team listens and recommends the best solution' },
+    { title: 'We Set You Up', desc: 'We handle the technical setup for your account' },
+    { title: 'Start Sending', desc: 'You begin sending messages to your customers' }
   ];
 
   const reasons = [
-    { icon: 'fa-handshake', title: 'Free Consultation', desc: 'We take time to understand your business needs' },
-    { icon: 'fa-user-cog', title: 'We Handle Setup', desc: 'We set everything up so you can start immediately' },
-    { icon: 'fa-headset', title: 'Ongoing Support', desc: 'Our team is always available to help you' },
-    { icon: 'fa-star', title: 'Best Rates', desc: 'Competitive pricing for businesses in Tanzania' }
+    { title: 'Free Consultation', desc: 'We take time to understand your business needs' },
+    { title: 'We Handle Setup', desc: 'We set everything up so you can start immediately' },
+    { title: 'Ongoing Support', desc: 'Our team is always available to help you' },
+    { title: 'Best Rates', desc: 'Competitive pricing for businesses in Tanzania' }
   ];
 
   return (
@@ -202,21 +198,18 @@ const App = () => {
 
         <div className="container hero-grid">
           <div className="hero-content">
-            <span className="badge">✦ Global SMS &amp; WhatsApp Platform</span>
+            <span className="badge">Global SMS &amp; WhatsApp Platform</span>
             <h1>Deliver Your Messages. <span className="gold">Grow Your Business.</span></h1>
             <p>Reach more customers with our powerful Bulk SMS platform. Send OTPs via Email, SMS &amp; WhatsApp.</p>
             
             <div className="hero-stats">
               <div className="stat-item">
-                <div className="icon"><i className="fas fa-globe"></i></div>
                 <div className="info"><strong>213+</strong><span>Countries Covered</span></div>
               </div>
               <div className="stat-item">
-                <div className="icon"><i className="fas fa-check-circle"></i></div>
                 <div className="info"><strong>800+</strong><span>Networks Connected</span></div>
               </div>
               <div className="stat-item">
-                <div className="icon"><i className="fas fa-clock"></i></div>
                 <div className="info"><strong>98.4%</strong><span>Delivery Rate</span></div>
               </div>
             </div>
@@ -232,7 +225,7 @@ const App = () => {
               <div className="stat-row"><span className="label">Global Coverage</span><span className="value">213 Countries</span></div>
               <div className="stat-row"><span className="label">Networks</span><span className="value">800+</span></div>
               <div className="stat-row"><span className="label">Average Speed</span><span className="value">2.3s</span></div>
-              <div className="stat-row"><span className="label">Monthly Volume</span><span className="value">&gt;10M</span></div>
+              <div className="stat-row"><span className="label">Monthly Volume</span><span className="value">10M+</span></div>
               <div className="stat-row"><span className="label">Delivery Rate</span><span className="value">98.4%</span></div>
               <div className="gold-bar"><div className="fill"></div></div>
               <div className="card-note">Enterprise-grade reliability across all networks</div>
@@ -252,7 +245,6 @@ const App = () => {
           <div className="features-grid">
             {features.map((f, i) => (
               <div className="feature-item" key={i}>
-                <span className="icon"><i className={`fas ${f.icon}`}></i></span>
                 <h4>{f.title}</h4>
                 <p>{f.desc}</p>
               </div>
@@ -272,12 +264,11 @@ const App = () => {
           <div className="services-grid">
             {services.map((s, i) => (
               <div className="service-card" key={i}>
-                <span className="icon"><i className={`fas ${s.icon}`}></i></span>
                 <h3>{s.title}</h3>
                 <p>{s.desc}</p>
                 <ul>
                   {s.features.map((f, j) => (
-                    <li key={j}><i className="fas fa-circle"></i> {f}</li>
+                    <li key={j}>{f}</li>
                   ))}
                 </ul>
               </div>
@@ -297,7 +288,7 @@ const App = () => {
           <div className="network-grid">
             {networks.map((n, i) => (
               <span className="network-item" key={i}>
-                <i className={`fas ${i === networks.length - 1 ? 'fa-plus-circle' : 'fa-check-circle'}`}></i> {n}
+                {n}
               </span>
             ))}
           </div>
@@ -320,7 +311,7 @@ const App = () => {
                 <div className="description">{plan.desc}</div>
                 <ul>
                   {plan.features.map((f, j) => (
-                    <li key={j}><i className="fas fa-circle"></i> {f}</li>
+                    <li key={j}>{f}</li>
                   ))}
                 </ul>
                 <a href="#contact" className="btn">Talk to Sales</a>
@@ -329,7 +320,7 @@ const App = () => {
             ))}
           </div>
           <div className="pricing-note">
-            <i className="fas fa-info-circle"></i> All prices in TZS. Enterprise discounts available for high-volume clients.
+            All prices in TZS. Enterprise discounts available for high-volume clients.
           </div>
         </div>
       </section>
@@ -372,7 +363,6 @@ const App = () => {
             {steps.map((step, i) => (
               <div className="step-item" key={i}>
                 <div className="step-number">{i + 1}</div>
-                <div className="step-icon"><i className={`fas ${step.icon}`}></i></div>
                 <h4>{step.title}</h4>
                 <p>{step.desc}</p>
               </div>
@@ -392,7 +382,6 @@ const App = () => {
           <div className="why-us-grid">
             {reasons.map((item, i) => (
               <div className="why-us-item" key={i}>
-                <div className="why-us-icon"><i className={`fas ${item.icon}`}></i></div>
                 <h4>{item.title}</h4>
                 <p>{item.desc}</p>
               </div>
@@ -402,7 +391,7 @@ const App = () => {
       </section>
 
       {/* ============================================================
-          PROFESSIONAL BLOG SECTION
+          BLOG SECTION
           ============================================================ */}
       <section className="blog-section" id="blog">
         <div className="container">
@@ -412,7 +401,6 @@ const App = () => {
             <p className="section-sub mx-auto">Expert tips, guides, and insights to help you grow your business with SMS and WhatsApp marketing.</p>
           </div>
 
-          {/* Blog Categories */}
           <div className="blog-categories">
             <span className="category active">All</span>
             <span className="category">Marketing Tips</span>
@@ -421,12 +409,10 @@ const App = () => {
             <span className="category">Security</span>
           </div>
 
-          {/* Blog Posts Grid */}
           <div className="blog-grid">
             {blogPosts.map((post) => (
               <div className={`blog-card ${expandedPost === post.id ? 'expanded' : ''}`} key={post.id}>
                 <div className="blog-card-header">
-                  {post.image && <div className="blog-image">{post.image}</div>}  {/* emoji removed – won't render */}
                   <div className="blog-meta">
                     <span className="blog-category">{post.category}</span>
                     <span className="blog-date">{post.date}</span>
@@ -457,14 +443,12 @@ const App = () => {
                     onClick={() => toggleBlogPost(post.id)}
                   >
                     {expandedPost === post.id ? 'Read Less' : 'Read More'}
-                    <i className={`fas ${expandedPost === post.id ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
                   </button>
                 </div>
               </div>
             ))}
           </div>
 
-          {/* Newsletter Signup */}
           <div className="blog-newsletter">
             <div className="newsletter-content">
               <h3>Subscribe to Our Newsletter</h3>
@@ -490,7 +474,7 @@ const App = () => {
             {faqs.map((faq, i) => (
               <div className={`faq-item ${activeFaq === i ? 'active' : ''}`} key={i} onClick={() => toggleFaq(i)}>
                 <div className="faq-question">
-                  {faq.q} <i className={`fas fa-chevron-down ${activeFaq === i ? 'rotated' : ''}`}></i>
+                  {faq.q}
                 </div>
                 <div className="faq-answer">{faq.a}</div>
               </div>
@@ -539,10 +523,10 @@ const App = () => {
           <div className="privacy-content">
             <p>We collect minimal data to provide our messaging services. We do not share your information with third parties without your explicit consent. All data is encrypted in transit and at rest.</p>
             <ul>
-              <li>✅ Data encryption</li>
-              <li>✅ No data sharing</li>
-              <li>✅ GDPR compliant</li>
-              <li>✅ Regular security audits</li>
+              <li>Data encryption</li>
+              <li>No data sharing</li>
+              <li>GDPR compliant</li>
+              <li>Regular security audits</li>
             </ul>
           </div>
         </div>
@@ -563,9 +547,7 @@ const App = () => {
         </div>
       </section>
 
-      {/* ============================================================
-          CONTACT PAGE
-          ============================================================ */}
+      {/* ===== CONTACT PAGE ===== */}
       <section className="contact-page" id="contact">
         <div className="container">
           <div className="text-center">
@@ -579,7 +561,6 @@ const App = () => {
               <h3>Contact Information</h3>
               
               <div className="contact-item">
-                <i className="fas fa-phone"></i>
                 <div>
                   <strong>Phone</strong>
                   <a href="tel:+255757170544">+255 757 170 544</a>
@@ -587,7 +568,6 @@ const App = () => {
               </div>
               
               <div className="contact-item">
-                <i className="fab fa-whatsapp"></i>
                 <div>
                   <strong>WhatsApp</strong>
                   <a href="https://wa.me/255757170544">+255 757 170 544</a>
@@ -595,7 +575,6 @@ const App = () => {
               </div>
               
               <div className="contact-item">
-                <i className="fas fa-envelope"></i>
                 <div>
                   <strong>Email</strong>
                   <a href="mailto:info@bulkysms.com">info@bulkysms.com</a>
@@ -603,7 +582,6 @@ const App = () => {
               </div>
               
               <div className="contact-item">
-                <i className="fas fa-map-marker-alt"></i>
                 <div>
                   <strong>Office</strong>
                   <p>Dar es Salaam, Tanzania</p>
@@ -611,7 +589,6 @@ const App = () => {
               </div>
               
               <div className="contact-item">
-                <i className="fas fa-clock"></i>
                 <div>
                   <strong>Working Hours</strong>
                   <p>Mon - Fri: 8:00 AM - 6:00 PM</p>
@@ -622,18 +599,10 @@ const App = () => {
               <div className="contact-social">
                 <h4>Follow Us</h4>
                 <div className="social-links">
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
-                    <i className="fab fa-facebook"></i>
-                  </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                    <i className="fab fa-twitter"></i>
-                  </a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                    <i className="fab fa-instagram"></i>
-                  </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                    <i className="fab fa-linkedin"></i>
-                  </a>
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" aria-label="Facebook">Facebook</a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">Twitter</a>
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Instagram">Instagram</a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">LinkedIn</a>
                 </div>
               </div>
             </div>
@@ -661,7 +630,7 @@ const App = () => {
                   </div>
                   
                   <button type="submit" className="btn-primary submit-btn">
-                    <i className="fab fa-whatsapp"></i> Send via WhatsApp
+                    Send via WhatsApp
                   </button>
                 </form>
               </div>
@@ -717,8 +686,7 @@ const App = () => {
         className="whatsapp-float"
         aria-label="Chat on WhatsApp"
       >
-        <i className="fab fa-whatsapp"></i>
-        <span className="whatsapp-text">Chat with us</span>
+        Chat with us
       </a>
     </div>
   );
