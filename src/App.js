@@ -5,7 +5,7 @@ const App = () => {
   const [activeFaq, setActiveFaq] = useState(0);
   const [scrolled, setScrolled] = useState(false);
   const [expandedPost, setExpandedPost] = useState(null);
-  const [blogPosts, setBlogPosts] = useState([
+  const [blogPosts] = useState([
     {
       id: 1,
       title: 'Why Bulk SMS is the Most Effective Marketing Channel in Tanzania',
