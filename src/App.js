@@ -429,7 +429,7 @@ Message:%0A${message}`;
               <div className={`blog-card ${expandedPost === post.id ? 'expanded' : ''}`} key={post.id}>
                 <div className="blog-card-header">
                   <div className="blog-meta">
-                    <span className="blog-category">{post.category}</span>
+                    <span className="blog-category-tag">{post.category}</span>
                     <span className="blog-date">{post.date}</span>
                   </div>
                 </div>
@@ -696,17 +696,16 @@ Message:%0A${message}`;
       </footer>
 
       {/* ===== FLOATING WHATSAPP BUTTON ===== */}
-      {/* ===== FLOATING WHATSAPP BUTTON ===== */}
-<a 
-  href="https://wa.me/255757170544?text=Hello!%20I%20want%20to%20learn%20more%20about%20Bulkysms%20services."
-  target="_blank"
-  rel="noopener noreferrer"
-  className="whatsapp-float"
-  aria-label="Chat on WhatsApp"
->
-  <i className="fab fa-whatsapp"></i>
-  <span className="whatsapp-text">Chat with us</span>
-</a>
+      <a 
+        href="https://wa.me/255757170544?text=Hello!%20I%20want%20to%20learn%20more%20about%20Bulkysms%20services."
+        target="_blank"
+        rel="noopener noreferrer"
+        className="whatsapp-float"
+        aria-label="Chat on WhatsApp"
+      >
+        <i className="fab fa-whatsapp"></i>
+        <span className="whatsapp-text">Chat with us</span>
+      </a>
     </div>
   );
 };
