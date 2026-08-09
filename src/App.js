@@ -21,7 +21,7 @@ const App = () => {
   }, []);
 
   // ============================================================
-  // TRANSLATIONS (Privacy & Terms as blog‑style sections)
+  // TRANSLATIONS
   // ============================================================
   const t = {
     en: {
@@ -35,21 +35,23 @@ const App = () => {
         contactUs: 'Contact Us'
       },
       hero: {
-        badge: 'SMS & WhatsApp Platform Tanzania',
-        title: 'Deliver Your Messages.',
-        titleGold: 'Grow Your Business.',
+        badge: '✦ Global SMS & WhatsApp Platform',
+        title: 'Reliable SMS & ',
+        titleGold: 'WhatsApp',
+        titleEnd: ' Solutions for Business',
         subtitle: 'Reach more customers with our powerful Bulk SMS platform. Send OTPs via SMS & WhatsApp.',
         stats: [
-          { label: 'Networks', value: '5+' },
-          { label: 'Mobile Users', value: '60M+' },
-          { label: 'Delivery Rate', value: '98%' }
+          { label: 'Countries Covered', value: '213+' },
+          { label: 'Networks Connected', value: '800+' },
+          { label: 'Delivery Rate', value: '98.4%' }
         ],
-        cta: 'Get Started Today',
+        cta: 'Get Started Free',
         cta2: 'View Pricing',
         card: {
-          networks: 'Mobile Networks',
-          users: 'Mobile Users',
-          speed: 'Delivery Speed',
+          global: 'Global Coverage',
+          networks: 'Networks',
+          speed: 'Average Speed',
+          volume: 'Monthly Volume',
           rate: 'Delivery Rate'
         },
         note: 'Enterprise-grade reliability across all networks'
@@ -70,20 +72,20 @@ const App = () => {
         label: 'Solutions',
         title: 'Our ',
         titleGold: 'Messaging Services',
-        subtitle: 'Reach your customers anywhere in Tanzania through the channels they prefer.',
+        subtitle: 'Reach your customers anywhere in the world through the channels they prefer.',
         list: [
-          { title: 'Internet SMS', desc: 'Send messages directly to mobile phones via our network. Custom sender IDs and real-time tracking.', features: ['All Tanzania Networks', 'Custom Sender ID', 'API Integration', 'Delivery Reports'] },
-          { title: 'WhatsApp Business', desc: 'Connect with customers on WhatsApp. Send notifications, promotions, and updates with official templates.', features: ['Reach Customers', 'Template Management', 'Multi-Account', 'Automated Campaigns'] },
-          { title: 'SIM-Based SMS', desc: 'Use your own SIM cards for cost-effective messaging. Perfect for local campaigns.', features: ['Flat Rate', 'Multi-SIM', 'Two-Way Communication', 'Mobile App Sync'] },
+          { title: 'Internet SMS', desc: 'Send messages directly to mobile phones via our global network. Custom sender IDs and real-time delivery tracking.', features: ['213+ Countries', '800+ Networks', 'Custom Sender ID', 'API Integration'] },
+          { title: 'WhatsApp Business', desc: 'Connect with customers on WhatsApp. Send notifications, promotions, and updates with official templates.', features: ['Global Reach', 'Template Management', 'Multi-Account', 'Automated Campaigns'] },
+          { title: 'SIM-Based SMS', desc: 'Use your own SIM cards for cost-effective messaging. Perfect for local and regional campaigns.', features: ['Flat Rate Pricing', 'Multiple SIM Support', 'Two-Way Messaging', 'Mobile App Sync'] },
           { title: 'AI Chatbot Assistant', desc: 'Automate customer interactions on WhatsApp. Capture leads and process orders without coding.', features: ['No-Code Builder', '24/7 Availability', 'Lead Generation', 'Order Processing'] }
         ]
       },
       networks: {
-        label: 'Tanzania Coverage',
+        label: 'Global Reach',
         title: 'We Connect to ',
-        titleGold: 'All Networks',
-        subtitle: 'Reliable coverage across Tanzania.',
-        list: ['Vodacom Tanzania', 'Airtel Tanzania', 'Tigo Tanzania', 'Halotel', 'TTCL', 'Zantel']
+        titleGold: '800+ Networks',
+        subtitle: 'Reliable coverage across Africa, Europe, the Americas, and beyond.',
+        list: ['South Africa', 'Germany', 'United Kingdom', 'USA', 'Singapore', 'Finland', 'Canada', 'Rep. Ireland', 'Denmark', 'Russia', 'Norway', '170+ Other Countries']
       },
       pricing: {
         label: 'Pricing',
@@ -91,11 +93,11 @@ const App = () => {
         titleGold: 'Transparent Plans',
         subtitle: 'Competitive rates with volume discounts. Choose what fits your business.',
         plans: [
-          { name: 'Internet SMS', price: 'TSh 16', sub: '/ msg', desc: 'Volume-based pricing for local delivery', features: ['1 to 5,000: TSh 16', '5,001 to 50,000: TSh 15', '50,001 to 100,000: TSh 14', '100,001 to 500,000: TSh 13', '500,001+: TSh 12'], featured: false },
-          { name: 'SIM-Based SMS', price: 'TSh 5', sub: 'flat rate', desc: 'Global coverage using your SIM cards', features: ['One flat rate', 'Two-way communication', 'Multi-SIM management', 'API ready'], featured: true, note: 'SIM carrier subscription required' },
-          { name: 'WhatsApp SMS', price: 'TSh 12', sub: 'flat rate', desc: 'Global reach with Meta integration', features: ['Multi-account', 'Template management', 'Automated campaigns', 'Analytics dashboard'], featured: false, note: 'Additional Meta fees may apply' }
+          { name: 'Internet SMS', price: 'TZS 16', sub: '/ msg', desc: 'Volume-based pricing for local delivery', features: ['1 – 5,000: TZS 16', '5,001 – 50,000: TZS 15', '50,001 – 100,000: TZS 14', '100,001 – 500,000: TZS 13', '500,001+: TZS 12'], featured: false },
+          { name: '⭐ Mobile SMS', price: 'TZS 5', sub: 'flat rate', desc: 'Global coverage using your SIM cards', features: ['One flat rate worldwide', 'Two-way communication', 'Multi-SIM management', 'API integration ready'], featured: true, note: 'SIM carrier subscription required' },
+          { name: 'WhatsApp SMS', price: 'TZS 12', sub: 'flat rate', desc: 'Global reach with Meta integration', features: ['Multi-account support', 'Template management', 'Campaign automation', 'Analytics dashboard'], featured: false, note: 'Additional Meta fees apply' }
         ],
-        note: 'All prices in TSh. Enterprise discounts available for high-volume clients.'
+        note: 'All prices in TZS. Enterprise discounts available for high-volume clients.'
       },
       testimonials: {
         label: 'Testimonials',
@@ -124,12 +126,12 @@ const App = () => {
         label: 'Why Choose Us',
         title: 'We Make ',
         titleGold: 'Communication Easy',
-        subtitle: "Here's why businesses in Tanzania trust Bulkysms.",
+        subtitle: "Here's why businesses trust Bulkysms.",
         reasons: [
           { title: 'Free Consultation', desc: 'We take time to understand your business needs' },
           { title: 'We Handle Setup', desc: 'We set everything up so you can start immediately' },
           { title: 'Ongoing Support', desc: 'Our team is always available to help you' },
-          { title: 'Best Rates', desc: 'Competitive pricing for businesses in Tanzania' }
+          { title: 'Best Rates', desc: 'Competitive pricing for your business' }
         ]
       },
       blog: {
@@ -140,36 +142,36 @@ const App = () => {
         categories: ['All', 'Marketing Tips', 'WhatsApp Business', 'Sales Strategies', 'Security'],
         posts: [
           {
-            title: 'Why Bulk SMS is the Most Effective Marketing Channel in Tanzania',
-            excerpt: 'Discover why businesses across Tanzania are choosing bulk SMS over social media and email to reach their customers instantly.',
-            content: 'In today\'s fast-paced digital world, businesses need to communicate with customers quickly and effectively. Bulk SMS offers an unparalleled 98% open rate compared to email\'s 20%. For Tanzanian businesses, SMS is particularly effective because of high mobile phone penetration (over 60 million subscribers) and reliable network coverage across all regions, from Dar es Salaam to rural areas.',
+            title: 'Why Bulk SMS is the Most Effective Marketing Channel',
+            excerpt: 'Discover why businesses are choosing bulk SMS over social media and email to reach their customers instantly.',
+            content: 'In today\'s fast-paced digital world, businesses need to communicate with customers quickly and effectively. Bulk SMS offers an unparalleled 98% open rate compared to email\'s 20%. For businesses, SMS is particularly effective because of high mobile phone penetration and reliable network coverage.',
             category: 'Marketing Tips',
             date: 'August 9, 2026',
             author: 'Bulkysms Team',
             readTime: '5 min read'
           },
           {
-            title: 'WhatsApp Business vs. SMS: Which is Better for Tanzanian Businesses?',
-            excerpt: 'Compare WhatsApp Business and traditional SMS to determine the best communication channel for your business in Tanzania.',
-            content: 'Both WhatsApp Business and SMS have unique strengths. SMS is available on every phone, including feature phones, making it the most accessible option. WhatsApp Business offers rich media but requires smartphones. For time-sensitive notifications like OTPs and payment reminders, SMS is more reliable. For customer engagement and support, WhatsApp Business offers a richer experience. Many Tanzanian businesses use both channels.',
+            title: 'WhatsApp Business vs. SMS: Which is Better for Your Business?',
+            excerpt: 'Compare WhatsApp Business and traditional SMS to determine the best communication channel for your business.',
+            content: 'Both WhatsApp Business and SMS have unique strengths. SMS is available on every phone, including feature phones, making it the most accessible option. WhatsApp Business offers rich media but requires smartphones. For time-sensitive notifications like OTPs and payment reminders, SMS is more reliable. For customer engagement and support, WhatsApp Business offers a richer experience. Many businesses use both channels.',
             category: 'WhatsApp Business',
             date: 'August 8, 2026',
             author: 'Bulkysms Team',
             readTime: '7 min read'
           },
           {
-            title: 'How to Boost Sales by 40% with SMS Marketing in Tanzania',
+            title: 'How to Boost Sales by 40% with SMS Marketing',
             excerpt: 'Learn proven strategies to increase your sales using targeted SMS campaigns that convert customers into loyal buyers.',
-            content: 'SMS marketing has proven to be one of the most effective sales channels in Tanzania. This guide covers segmentation, timing, and crafting messages that convert. Research shows that personalized SMS messages have a 45% response rate. By segmenting your audience and sending targeted offers, you can significantly increase your conversion rates and build lasting customer relationships.',
+            content: 'SMS marketing has proven to be one of the most effective sales channels. This guide covers segmentation, timing, and crafting messages that convert. Research shows that personalized SMS messages have a 45% response rate. By segmenting your audience and sending targeted offers, you can significantly increase your conversion rates.',
             category: 'Sales Strategies',
             date: 'August 7, 2026',
             author: 'Bulkysms Team',
             readTime: '6 min read'
           },
           {
-            title: 'OTP Delivery: Why Tanzanian Businesses Need Secure Authentication',
-            excerpt: 'Learn why One-Time Password (OTP) delivery via SMS is essential for securing your customers\' accounts in Tanzania.',
-            content: 'Cyber threats are on the rise in Tanzania. OTP delivery via SMS provides an additional layer of security that protects both your business and your customers. With mobile money transactions growing rapidly across the country, securing your authentication flow is essential. It builds trust and reduces the risk of unauthorized access to sensitive data.',
+            title: 'OTP Delivery: Why Businesses Need Secure Authentication',
+            excerpt: 'Learn why One-Time Password (OTP) delivery via SMS is essential for securing your customers\' accounts.',
+            content: 'Cyber threats are on the rise. OTP delivery via SMS provides an additional layer of security that protects both your business and your customers. With mobile money transactions growing rapidly, securing your authentication flow is essential. It builds trust and reduces the risk of unauthorized access to sensitive data.',
             category: 'Security',
             date: 'August 6, 2026',
             author: 'Bulkysms Team',
@@ -190,7 +192,7 @@ const App = () => {
         titleGold: 'Asked Questions',
         subtitle: 'Everything you need to know about Bulkysms.',
         list: [
-          { q: 'What is Bulkysms?', a: 'Bulkysms is a business messaging platform that allows you to send SMS and WhatsApp messages to customers worldwide. We provide reliable delivery across all networks in Tanzania.' },
+          { q: 'What is Bulkysms?', a: 'Bulkysms is a business messaging platform that allows you to send SMS and WhatsApp messages to customers worldwide. We provide reliable delivery across 800+ networks in 213 countries.' },
           { q: 'How do I send messages?', a: 'Simply upload your contact list, compose your message, and send. The platform handles delivery and provides real-time reports on delivery status.' },
           { q: 'Can I integrate Bulkysms with my systems?', a: 'Yes, we offer a comprehensive REST API that enables integration with your CRM, ERP, or any custom application. Documentation is available to help you get started quickly.' },
           { q: 'What support do you provide?', a: 'We offer dedicated support via email and phone. Enterprise clients receive priority support and account management.' },
@@ -202,9 +204,9 @@ const App = () => {
         title: 'Who ',
         titleGold: 'We Are',
         subtitle: 'Bulkysms is a trusted messaging platform serving businesses across Tanzania and beyond.',
-        text: `Bulkysms was founded with a clear mission: to simplify business communication in Tanzania and make it accessible, reliable, and affordable for every organisation. We understand that in today's competitive landscape, staying connected with customers, partners, and employees is not just an advantage — it's a necessity.
+        text: `Bulkysms was founded with a clear mission: to simplify business communication and make it accessible, reliable, and affordable for every organisation. We understand that in today's competitive landscape, staying connected with customers, partners, and employees is not just an advantage — it's a necessity.
 
-Our platform combines powerful SMS and WhatsApp messaging tools, designed specifically for the Tanzanian market. We have invested heavily in local infrastructure, partnering with all major mobile network operators (Vodacom, Airtel, Tigo, Halotel, TTCL, and Zantel) to ensure that your messages reach their destination instantly, even in the most remote areas.
+Our platform combines powerful SMS and WhatsApp messaging tools, designed specifically for the global market. We have invested heavily in infrastructure, partnering with over 800 mobile networks across 213 countries to ensure that your messages reach their destination instantly.
 
 What sets us apart is our commitment to customer success. Our team of experts works closely with businesses of all sizes — from micro-enterprises to large corporations — to tailor solutions that fit their unique needs. Whether you need to send payment reminders, promotional offers, OTPs, or critical alerts, we make it simple and cost-effective.
 
@@ -303,7 +305,7 @@ Thank you for your interest in joining Bulkysms. We look forward to potentially 
       },
       footer: {
         brand: 'Dar es Salaam, Tanzania',
-        brandDesc: 'SMS and WhatsApp solutions for businesses.',
+        brandDesc: 'Global SMS and WhatsApp messaging solutions for businesses.',
         solutions: 'Solutions',
         company: 'Company',
         support: 'Support',
@@ -322,24 +324,26 @@ Thank you for your interest in joining Bulkysms. We look forward to potentially 
         contactUs: 'Wasiliana Nasi'
       },
       hero: {
-        badge: 'Jukwaa la SMS & WhatsApp Tanzania',
-        title: 'Wasiliana na Wateja Wako.',
-        titleGold: 'Kua Biashara Yako.',
-        subtitle: 'Fikia wateja zaidi kwa jukwaa letu la SMS. Tuma OTPs kwa SMS na WhatsApp.',
+        badge: '✦ Jukwaa la SMS & WhatsApp Duniani',
+        title: 'Suluhisho za SMS na ',
+        titleGold: 'WhatsApp',
+        titleEnd: ' kwa Biashara',
+        subtitle: 'Tuma ujumbe kwenye mitandao 800+ duniani kote. Akaunti moja, dashibodi moja, udhibiti kamili.',
         stats: [
-          { label: 'Mitandao', value: '5+' },
-          { label: 'Watumiaji', value: '60M+' },
-          { label: 'Uwasilishaji', value: '98%' }
+          { label: 'Nchi Zinazofikiwa', value: '213+' },
+          { label: 'Mitandao Iliyounganishwa', value: '800+' },
+          { label: 'Kiwango cha Uwasilishaji', value: '98.4%' }
         ],
-        cta: 'Anza Sasa',
+        cta: 'Anza Bure',
         cta2: 'Tazama Bei',
         card: {
+          global: 'Ufikiaji Duniani',
           networks: 'Mitandao',
-          users: 'Watumiaji',
-          speed: 'Kasi',
-          rate: 'Kiwango'
+          speed: 'Kasi ya Uwasilishaji',
+          volume: 'Kiasi cha Mwezi',
+          rate: 'Kiwango cha Uwasilishaji'
         },
-        note: 'Uaminifu wa kiwango cha biashara'
+        note: 'Uaminifu wa kiwango cha biashara katika mitandao yote'
       },
       whyChoose: {
         label: 'Kwa Nini Bulkysms',
@@ -357,30 +361,30 @@ Thank you for your interest in joining Bulkysms. We look forward to potentially 
         label: 'Suluhisho',
         title: 'Huduma Zetu za ',
         titleGold: 'Ujumbe',
-        subtitle: 'Fikia wateja wako popote Tanzania.',
+        subtitle: 'Fikia wateja wako popote duniani kupitia njia wanazopendelea.',
         list: [
-          { title: 'SMS Mtandao', desc: 'Tuma ujumbe kwenye simu za mkononi. Namba yako mwenyewe na ufuatiliaji.', features: ['Mitandao yote Tanzania', 'Namba yako', 'API', 'Ripoti'] },
-          { title: 'WhatsApp Biashara', desc: 'Ungana na wateja kwenye WhatsApp. Tuma notisi na matangazo.', features: ['Fikia wateja', 'Usimamizi wa templates', 'Akaunti nyingi', 'Kampeni otomatiki'] },
-          { title: 'SMS Simu', desc: 'Tumia SIM kadi yako kwa ujumbe wa gharama nafuu.', features: ['Bei moja', 'SIM nyingi', 'Mawasiliano pande mbili', 'Sawazisha na programu'] },
-          { title: 'Msaidizi wa AI', desc: 'Otomatiki mwingiliano wa wateja kwenye WhatsApp.', features: ['Jenga bila programu', 'Inapatikana 24/7', 'Kukamata wateja', 'Kuchakata maagizo'] }
+          { title: 'SMS Mtandao', desc: 'Tuma ujumbe moja kwa moja kwenye simu za mkononi kupitia mtandao wetu. Namba yako mwenyewe na ufuatiliaji wa wakati halisi.', features: ['Nchi 213+', 'Mitandao 800+', 'Namba yako', 'API'] },
+          { title: 'WhatsApp Biashara', desc: 'Ungana na wateja kwenye WhatsApp. Tuma notisi, matangazo, na sasisho kwa templates rasmi.', features: ['Ufikiaji Duniani', 'Usimamizi wa Templates', 'Akaunti Nyingi', 'Kampeni za Kiotomatiki'] },
+          { title: 'SMS Simu', desc: 'Tumia SIM kadi zako mwenyewe kwa ujumbe wa gharama nafuu. Inafaa kwa kampeni za ndani na za kikanda.', features: ['Bei Moja', 'SIM Nyingi', 'Mawasiliano ya Pande Mbili', 'Sawazisha na Programu'] },
+          { title: 'Msaidizi wa AI Chatbot', desc: 'Otomatiki mwingiliano wa wateja kwenye WhatsApp. Kukamata wateja na kuchakata maagizo bila programu.', features: ['Jenga Bila Programu', 'Inapatikana 24/7', 'Kukamata Wateja', 'Kuchakata Maagizo'] }
         ]
       },
       networks: {
-        label: 'Ufikiaji Tanzania',
+        label: 'Ufikiaji Duniani',
         title: 'Tunaungana na ',
-        titleGold: 'Mitandao Yote',
-        subtitle: 'Ufikiaji wa kuaminika kote nchini.',
-        list: ['Vodacom Tanzania', 'Airtel Tanzania', 'Tigo Tanzania', 'Halotel', 'TTCL', 'Zantel']
+        titleGold: 'Mitandao 800+',
+        subtitle: 'Ufikiaji wa kuaminika Afrika, Ulaya, Amerika, na zaidi.',
+        list: ['Afrika Kusini', 'Ujerumani', 'Uingereza', 'Marekani', 'Singapore', 'Ufini', 'Kanada', 'Ayalandi', 'Denmark', 'Urusi', 'Norway', 'Nchi 170+']
       },
       pricing: {
         label: 'Bei',
         title: 'Bei ',
         titleGold: 'Rahisi na Wazi',
-        subtitle: 'Bei zinazoshindana na punguzo kulingana na kiasi.',
+        subtitle: 'Bei zinazoshindana na punguzo kulingana na kiasi. Chagua kinachofaa biashara yako.',
         plans: [
-          { name: 'SMS Mtandao', price: 'TSh 16', sub: '/ ujumbe', desc: 'Bei kulingana na kiasi', features: ['1 hadi 5,000: TSh 16', '5,001 hadi 50,000: TSh 15', '50,001 hadi 100,000: TSh 14', '100,001 hadi 500,000: TSh 13', '500,001+: TSh 12'], featured: false },
-          { name: 'SMS Simu', price: 'TSh 5', sub: 'bei moja', desc: 'Ufikiaji wa kimataifa kwa SIM kadi zako', features: ['Bei moja', 'Mawasiliano pande mbili', 'Usimamizi wa SIM nyingi', 'API tayari'], featured: true, note: 'Inahitaji usajili wa SMS wa SIM' },
-          { name: 'WhatsApp SMS', price: 'TSh 12', sub: 'bei moja', desc: 'Ufikiaji wa kimataifa kwa Meta', features: ['Akaunti nyingi', 'Usimamizi wa templates', 'Kampeni otomatiki', 'Dashibodi'], featured: false, note: 'Ada za Meta zinaweza kutumika' }
+          { name: 'SMS Mtandao', price: 'TSh 16', sub: '/ ujumbe', desc: 'Bei kulingana na kiasi kwa uwasilishaji wa ndani', features: ['1 hadi 5,000: TSh 16', '5,001 hadi 50,000: TSh 15', '50,001 hadi 100,000: TSh 14', '100,001 hadi 500,000: TSh 13', '500,001+: TSh 12'], featured: false },
+          { name: '⭐ SMS Simu', price: 'TSh 5', sub: 'bei moja', desc: 'Ufikiaji wa kimataifa kwa SIM kadi zako', features: ['Bei moja duniani', 'Mawasiliano pande mbili', 'Usimamizi wa SIM nyingi', 'API tayari'], featured: true, note: 'Inahitaji usajili wa SMS wa SIM' },
+          { name: 'SMS WhatsApp', price: 'TSh 12', sub: 'bei moja', desc: 'Ufikiaji wa kimataifa kwa kuunganishwa na Meta', features: ['Akaunti nyingi', 'Usimamizi wa templates', 'Kampeni otomatiki', 'Dashibodi'], featured: false, note: 'Ada za Meta zinaweza kutumika' }
         ],
         note: 'Bei zote ni TSh. Punguzo kwa wateja wa kiwango cha juu.'
       },
@@ -388,7 +392,7 @@ Thank you for your interest in joining Bulkysms. We look forward to potentially 
         label: 'Maoni',
         title: 'Wateja Wetu ',
         titleGold: 'Wanasema',
-        subtitle: 'Maoni halisi kutoka kwa biashara.',
+        subtitle: 'Maoni halisi kutoka kwa biashara zinazotumia Bulkysms.',
         list: [
           { stars: 5, text: '"Uwasilishaji wa kuaminika na msaada bora. Bulkysms imebadilisha mawasiliano yetu."', name: 'Steven Matiku', role: 'ECOWATER International' },
           { stars: 5, text: '"Thamani nzuri kwa pesa. Jukwaa ni rahisi kutumia na viwango vya uwasilishaji ni bora."', name: 'David Demetry', role: 'BUSBORA Tanzania' },
@@ -399,7 +403,7 @@ Thank you for your interest in joining Bulkysms. We look forward to potentially 
         label: 'Jinsi Inavyofanya Kazi',
         title: 'Anza Kwa ',
         titleGold: 'Hatua 4 Rahisi',
-        subtitle: 'Tunafanya iwe rahisi kwako kuanza.',
+        subtitle: 'Tunafanya iwe rahisi kwako kuanza kuwasiliana na wateja wako.',
         steps: [
           { title: 'Wasiliana Nasi', desc: 'Piga simu, tuma WhatsApp, au jaza fomu' },
           { title: 'Tunajadili Mahitaji Yako', desc: 'Timu yetu inasikiliza na kupendekeza suluhisho' },
@@ -411,25 +415,25 @@ Thank you for your interest in joining Bulkysms. We look forward to potentially 
         label: 'Kwa Nini Sisi',
         title: 'Tunafanya ',
         titleGold: 'Mawasiliano Rahisi',
-        subtitle: 'Hapa kwa nini biashara nchini Tanzania zinatuamini.',
+        subtitle: 'Hapa kwa nini biashara zinatuamini.',
         reasons: [
           { title: 'Mashauriano Bure', desc: 'Tunachukua muda kuelewa mahitaji yako' },
           { title: 'Tunashughulikia Usanidi', desc: 'Tunasanidi kila kitu ili uanze mara moja' },
           { title: 'Msaada wa Daima', desc: 'Timu yetu iko tayari kukusaidia' },
-          { title: 'Bei Bora', desc: 'Bei zinazoshindana nchini Tanzania' }
+          { title: 'Bei Bora', desc: 'Bei zinazoshindana kwa biashara yako' }
         ]
       },
       blog: {
         label: 'Blogu',
         title: 'Machapisho ',
         titleGold: 'Yaliyopita',
-        subtitle: 'Vidokezo, mwongozo, na maarifa kukusaidia kukuza biashara yako.',
+        subtitle: 'Vidokezo, mwongozo, na maarifa kukusaidia kukuza biashara yako kwa SMS na WhatsApp.',
         categories: ['Zote', 'Vidokezo', 'WhatsApp Biashara', 'Mikakati', 'Usalama'],
         posts: [
           {
-            title: 'Kwa Nini SMS ni Njia Bora ya Uuzaji Tanzania',
-            excerpt: 'Jua kwa nini biashara nchini Tanzania zinachagua SMS badala ya mitandao ya kijamii.',
-            content: 'Katika ulimwengu wa leo, biashara zinahitaji kuwasiliana na wateja kwa haraka. SMS ina kiwango cha ufunguzi cha 98% ikilinganishwa na barua pepe 20%. Kwa biashara za Tanzania, SMS ni bora kutokana na idadi kubwa ya watumiaji wa simu (zaidi ya milioni 60).',
+            title: 'Kwa Nini SMS ni Njia Bora ya Uuzaji',
+            excerpt: 'Jua kwa nini biashara zinachagua SMS badala ya mitandao ya kijamii.',
+            content: 'Katika ulimwengu wa leo, biashara zinahitaji kuwasiliana na wateja kwa haraka. SMS ina kiwango cha ufunguzi cha 98% ikilinganishwa na barua pepe 20%. Kwa biashara, SMS ni bora kutokana na idadi kubwa ya watumiaji wa simu na ufikiaji wa mtandao.',
             category: 'Vidokezo',
             date: 'Agosti 9, 2026',
             author: 'Timu ya Bulkysms',
@@ -445,18 +449,18 @@ Thank you for your interest in joining Bulkysms. We look forward to potentially 
             readTime: 'Dk 7'
           },
           {
-            title: 'Jinsi ya Kuongeza Mauzo kwa 40% kwa SMS Tanzania',
+            title: 'Jinsi ya Kuongeza Mauzo kwa 40% kwa SMS',
             excerpt: 'Jifunze mikakati ya kuongeza mauzo kwa kutumia kampeni za SMS.',
-            content: 'Uuzaji wa SMS umeonekana kuwa moja ya njia bora nchini Tanzania. Mwongozo huu unashughulikia mgawanyo, muda, na kuandika ujumbe unaobadilisha. Utafiti unaonyesha kuwa ujumbe wa SMS wa kibinafsi una kiwango cha majibu cha 45%.',
+            content: 'Uuzaji wa SMS umeonekana kuwa moja ya njia bora. Mwongozo huu unashughulikia mgawanyo, muda, na kuandika ujumbe unaobadilisha. Utafiti unaonyesha kuwa ujumbe wa SMS wa kibinafsi una kiwango cha majibu cha 45%.',
             category: 'Mikakati',
             date: 'Agosti 7, 2026',
             author: 'Timu ya Bulkysms',
             readTime: 'Dk 6'
           },
           {
-            title: 'Uwasilishaji wa OTP: Kwa Nini Biashara Zinahitaji Usalama Tanzania',
+            title: 'Uwasilishaji wa OTP: Kwa Nini Biashara Zinahitaji Usalama',
             excerpt: 'Jua kwa nini uwasilishaji wa OTP kwa SMS ni muhimu kwa usalama wa wateja wako.',
-            content: 'Vitisho vya mtandao vinaongezeka Tanzania. Uwasilishaji wa OTP kwa SMS hutoa safu ya ziada ya usalama. Pamoja na shughuli za fedha za simu kuongezeka, usalama wa uthibitishaji ni muhimu. Inajenga imani na kupunguza hatari ya ufikiaji usioidhinishwa.',
+            content: 'Vitisho vya mtandao vinaongezeka. Uwasilishaji wa OTP kwa SMS hutoa safu ya ziada ya usalama. Pamoja na shughuli za fedha za simu kuongezeka, usalama wa uthibitishaji ni muhimu. Inajenga imani na kupunguza hatari ya ufikiaji usioidhinishwa.',
             category: 'Usalama',
             date: 'Agosti 6, 2026',
             author: 'Timu ya Bulkysms',
@@ -475,23 +479,23 @@ Thank you for your interest in joining Bulkysms. We look forward to potentially 
         label: 'Maswali',
         title: 'Maswali ',
         titleGold: 'Yanayoulizwa Mara Kwa Mara',
-        subtitle: 'Kila kitu unachohitaji kujua.',
+        subtitle: 'Kila kitu unachohitaji kujua kuhusu Bulkysms.',
         list: [
-          { q: 'Bulkysms ni nini?', a: 'Bulkysms ni jukwaa la ujumbe wa SMS na WhatsApp kwa biashara. Tunatoa huduma kwa wateja nchini Tanzania.' },
-          { q: 'Je, nitumie SMS au WhatsApp?', a: 'SMS inafanya kazi kwenye simu zote. WhatsApp inahitaji simu mahiri. Chaguo linategemea wateja wako.' },
+          { q: 'Bulkysms ni nini?', a: 'Bulkysms ni jukwaa la ujumbe wa SMS na WhatsApp kwa biashara. Tunatoa huduma kwa wateja duniani kote kupitia mitandao 800+ katika nchi 213.' },
+          { q: 'Jinsi ya kutuma ujumbe?', a: 'Pakia orodha yako ya mawasiliano, andika ujumbe, na utume. Jukwaa linashughulikia uwasilishaji na kutoa ripoti za wakati halisi.' },
           { q: 'Je, naweza kuunganisha na mifumo yangu?', a: 'Ndiyo, tunatoa API ya REST inayowezesha kuunganishwa na CRM, ERP, au programu nyingine.' },
-          { q: 'Mna msaada gani?', a: 'Tunatoa msaada wa moja kwa moja kupitia barua pepe na simu.' },
-          { q: 'Je, data yangu iko salama?', a: 'Ndiyo, tunatumia usimbaji fiche na kufuata viwango bora vya usalama.' }
+          { q: 'Mna msaada gani?', a: 'Tunatoa msaada wa moja kwa moja kupitia barua pepe na simu. Wateja wa biashara kubwa wanapata msaada wa kipaumbele.' },
+          { q: 'Je, data yangu iko salama?', a: 'Ndiyo, tunatumia usimbaji fiche na kufuata viwango bora vya usalama. Mifumo yetu hukaguliwa mara kwa mara.' }
         ]
       },
       about: {
         label: 'Kuhusu Sisi',
         title: 'Sisi ',
         titleGold: 'Ni Nani',
-        subtitle: 'Bulkysms ni jukwaa linaloaminika kwa biashara nchini Tanzania.',
-        text: `Bulkysms ilianzishwa kwa lengo wazi: kurahisisha mawasiliano ya biashara nchini Tanzania na kuifanya iwe ya urahisi, kuaminika, na nafuu kwa kila shirika. Tunaelewa kwamba katika mazingira ya biashara ya leo, kuwasiliana na wateja, washirika, na wafanyakazi si faida tu — bali ni hitaji la msingi.
+        subtitle: 'Bulkysms ni jukwaa linaloaminika kwa biashara duniani kote.',
+        text: `Bulkysms ilianzishwa kwa lengo wazi: kurahisisha mawasiliano ya biashara na kuifanya iwe ya urahisi, kuaminika, na nafuu kwa kila shirika. Tunaelewa kwamba katika mazingira ya biashara ya leo, kuwasiliana na wateja, washirika, na wafanyakazi si faida tu — bali ni hitaji la msingi.
 
-Jukwaa letu linachanganya zana za ujumbe wa SMS na WhatsApp, zilizoundwa mahususi kwa soko la Tanzania. Tumewekeza sana katika miundombinu ya ndani, tukishirikiana na waendeshaji wote wakuu wa mitandao ya simu (Vodacom, Airtel, Tigo, Halotel, TTCL, na Zantel) ili kuhakikisha kwamba ujumbe wako unafika mara moja, hata katika maeneo ya mbali.
+Jukwaa letu linachanganya zana za ujumbe wa SMS na WhatsApp, zilizoundwa mahususi kwa soko la kimataifa. Tumewekeza sana katika miundombinu, tukishirikiana na waendeshaji zaidi ya 800 wa mitandao ya simu katika nchi 213 ili kuhakikisha kwamba ujumbe wako unafika mara moja.
 
 Kinachotutofautisha ni dhamira yetu ya mafanikio ya wateja. Timu yetu ya wataalam inafanya kazi kwa karibu na biashara za ukubwa wote — kutoka biashara ndogo hadi makampuni makubwa — ili kusanikua suluhisho zinazofaa mahitaji yao ya kipekee. Iwe unahitaji kutuma vikumbusho vya malipo, matangazo ya ofa, OTPs, au taarifa muhimu, tunarahisisha na kufanya gharama kuwa nafuu.
 
@@ -519,21 +523,21 @@ Asante kwa nia yako ya kujiunga na Bulkysms. Tunatazamia kufanya kazi nawe katik
         subtitle: 'Data yako iko salama nasi.',
         sections: [
           { type: 'heading', text: 'Dhamira Yetu ya Faragha' },
-          { type: 'paragraph', text: 'Katika Bulkysms, tunachukulia faragha yako kwa uzito. Sera hii ya Faragha inaelezea jinsi tunavyokusanya, kutumia, kufichua, na kulinda taarifa zako unapotembelea tovuti yetu au kutumia huduma zetu. Tafadhali soma sera hii kwa uangalifu ili kuelewa maoni na desturi zetu kuhusu data yako ya kibinafsi na jinsi tutakavyoitendea.' },
+          { type: 'paragraph', text: 'Katika Bulkysms, tunachukulia faragha yako kwa uzito. Sera hii ya Faragha inaelezea jinsi tunavyokusanya, kutumia, kufichua, na kulinda taarifa zako unapotembelea tovuti yetu au kutumia huduma zetu. Tafadhali soma sera hii kwa uangalifu.' },
           { type: 'heading', text: 'Taarifa Tunazokusanya' },
-          { type: 'paragraph', text: 'Tunaweza kukusanya na kuchakata data ifuatayo kukuhusu: taarifa unazotoa kwa kujaza fomu kwenye tovuti yetu (k.m., jina, barua pepe, nambari ya simu), maelezo ya ziara zako kwenye tovuti yetu na rasilimali unazofikia, ukiwasiliana nasi tunaweza kuweka rekodi ya mawasiliano hayo, na data ya kiufundi kama vile anwani yako ya IP, aina ya kivinjari, na mfumo wa uendeshaji.' },
+          { type: 'paragraph', text: 'Tunaweza kukusanya na kuchakata data ifuatayo kukuhusu: taarifa unazotoa kwa kujaza fomu kwenye tovuti yetu (k.m., jina, barua pepe, nambari ya simu), maelezo ya ziara zako, mawasiliano, na data ya kiufundi kama vile anwani yako ya IP.' },
           { type: 'heading', text: 'Jinsi Tunavyotumia Taarifa Zako' },
           { type: 'paragraph', text: 'Tunatumia taarifa zako kwa: kukupa huduma unazoomba, kuboresha tovuti na huduma zetu, kukutumia mawasiliano ya matangazo (kwa idhini yako tu), na kutii majukumu ya kisheria.' },
           { type: 'heading', text: 'Usalama wa Data' },
-          { type: 'paragraph', text: 'Tunatekeleza hatua sahihi za kiufundi na shirika kulinda data yako ya kibinafsi dhidi ya ufikiaji usioidhinishwa, mabadiliko, ufichuzi, au uharibifu. Data zote zimepigwa siri wakati wa kusafirishwa kwa kutumia itifaki za SSL/TLS, na seva zetu zinalindwa na ngome za usalama na teknolojia zingine.' },
+          { type: 'paragraph', text: 'Tunatekeleza hatua sahihi za kiufundi na shirika kulinda data yako. Data zote zimepigwa siri wakati wa kusafirishwa kwa kutumia SSL/TLS, na seva zetu zinalindwa na ngome za usalama.' },
           { type: 'heading', text: 'Kushiriki Data' },
-          { type: 'paragraph', text: 'Hatupitishi, kukodisha, au kukodisha taarifa zako za kitambulisho kwa wahusika wengine. Tunaweza kushiriki data ya jumla ya kidemografia iliyojumlishwa ambayo haihusiani na taarifa yoyote ya kitambulisho cha kibinafsi kuhusu wageni na watumiaji na washirika wetu wa biashara, waaminifu wanaoaminika, na watangazaji kwa madhumuni yaliyoelezwa hapo juu.' },
+          { type: 'paragraph', text: 'Hatupitishi, kukodisha, au kukodisha taarifa zako za kitambulisho kwa wahusika wengine. Tunaweza kushiriki data ya jumla ya kidemografia isiyohusiana na taarifa yako ya kibinafsi.' },
           { type: 'heading', text: 'Vidakuzi' },
-          { type: 'paragraph', text: 'Tovuti yetu inatumia vidakuzi ili kukutofautisha na watumiaji wengine na kukupa uzoefu bora. Unaweza kuweka kivinjari chako kukataa vidakuzi, lakini hii inaweza kuweka mipaka kwenye baadhi ya utendakazi.' },
+          { type: 'paragraph', text: 'Tovuti yetu inatumia vidakuzi ili kukutofautisha na watumiaji wengine na kukupa uzoefu bora. Unaweza kuweka kivinjari chako kukataa vidakuzi.' },
           { type: 'heading', text: 'Haki Zako' },
-          { type: 'paragraph', text: 'Una haki ya kuomba ufikiaji, marekebisho, au ufutaji wa data yako ya kibinafsi. Unaweza pia kupinga usindikaji au kuomba kizuizi. Ili kutekeleza haki zozote kati ya hizi, tafadhali wasiliana nasi kwa info@bulkysms.com.' },
+          { type: 'paragraph', text: 'Una haki ya kuomba ufikiaji, marekebisho, au ufutaji wa data yako. Ili kutekeleza haki zako, tafadhali wasiliana nasi kwa info@bulkysms.com.' },
           { type: 'heading', text: 'Mabadiliko ya Sera Hii' },
-          { type: 'paragraph', text: 'Tunaweza kusasisha sera hii mara kwa mara. Mabadiliko yoyote yatachapishwa kwenye ukurasa huu pamoja na tarehe ya marekebisho. Tunakuhimiza ukague sera hii mara kwa mara. Kwa kutumia huduma zetu, unakubali kukusanya na kutumia taarifa zako kama ilivyoelezwa katika sera hii. Ikiwa una maswali yoyote kuhusu Sera hii ya Faragha, tafadhali wasiliana nasi.' }
+          { type: 'paragraph', text: 'Tunaweza kusasisha sera hii mara kwa mara. Mabadiliko yoyote yatachapishwa kwenye ukurasa huu. Kwa kutumia huduma zetu, unakubali sera hii.' }
         ]
       },
       terms: {
@@ -543,25 +547,25 @@ Asante kwa nia yako ya kujiunga na Bulkysms. Tunatazamia kufanya kazi nawe katik
         subtitle: 'Kwa kutumia Bulkysms, unakubali masharti yetu.',
         sections: [
           { type: 'heading', text: 'Kukubali Masharti' },
-          { type: 'paragraph', text: 'Kwa kutumia Bulkysms, unathibitisha kuwa una angalau miaka 18 na una uwezo wa kisheria wa kuingia katika makubaliano ya kisheria. Pia unakubali kufuata sheria na kanuni zote zinazotumika.' },
+          { type: 'paragraph', text: 'Kwa kutumia Bulkysms, unathibitisha kuwa una angalau miaka 18 na una uwezo wa kisheria wa kuingia katika makubaliano. Pia unakubali kufuata sheria na kanuni zote.' },
           { type: 'heading', text: 'Maelezo ya Huduma' },
-          { type: 'paragraph', text: 'Bulkysms hutoa huduma za ujumbe, ikiwa ni pamoja na SMS na WhatsApp, kwa biashara. Tunatoa aina mbalimbali za mipango na vipengele, vyote vinavyoweza kubadilishwa bila taarifa ya awali.' },
+          { type: 'paragraph', text: 'Bulkysms hutoa huduma za ujumbe, ikiwa ni pamoja na SMS na WhatsApp, kwa biashara. Tunatoa aina mbalimbali za mipango na vipengele.' },
           { type: 'heading', text: 'Wajibu wa Mtumiaji' },
-          { type: 'paragraph', text: 'Unakubali kutumia huduma kwa madhumuni halali pekee, kutotuma barua taka, maudhui ya ulaghai, au yenye madhara, kutojaribu kupata ufikiaji usioidhinishwa wa mifumo yetu, na kutoa taarifa sahihi na kamili wakati wa kujiandikisha.' },
+          { type: 'paragraph', text: 'Unakubali kutumia huduma kwa madhumuni halali, kutotuma barua taka, na kutoa taarifa sahihi wakati wa kujiandikisha.' },
           { type: 'heading', text: 'Ada na Malipo' },
-          { type: 'paragraph', text: 'Malipo ya huduma zetu yameelezwa wazi kwenye ukurasa wetu wa bei. Unakubali kulipa ada zote kwa mujibu wa mpango uliochaguliwa. Malipo hayarejeshewi isipokuwa kama inavyotakiwa na sheria.' },
+          { type: 'paragraph', text: 'Malipo ya huduma zetu yameelezwa wazi. Unakubali kulipa ada zote kwa mujibu wa mpango uliochaguliwa.' },
           { type: 'heading', text: 'Miliki za Kiakili' },
-          { type: 'paragraph', text: 'Maudhui yote kwenye tovuti hii, ikiwa ni pamoja na maandishi, picha, alama, na programu, ni mali ya Bulkysms na inalindwa na sheria za hakimiliki. Huwezi kuiga, kusambaza, au kuunda kazi za derivative bila idhini yetu wazi.' },
+          { type: 'paragraph', text: 'Maudhui yote kwenye tovuti hii ni mali ya Bulkysms na inalindwa na sheria za hakimiliki.' },
           { type: 'heading', text: 'Kizuizi cha Dhima' },
-          { type: 'paragraph', text: 'Bulkysms hutoa huduma "kama ilivyo" bila dhamana za aina yoyote. Hatutawajibika kwa uharibifu wowote usio wa moja kwa moja, wa bahati mbaya, au unaofuata kutokana na matumizi ya huduma zetu.' },
+          { type: 'paragraph', text: 'Bulkysms hutoa huduma "kama ilivyo" bila dhamana. Hatutawajibika kwa uharibifu wowote usio wa moja kwa moja.' },
           { type: 'heading', text: 'Kusimamisha' },
-          { type: 'paragraph', text: 'Tunahifadhi haki ya kusimamisha au kukatisha akaunti yako ikiwa unakiuka masharti haya. Unaweza pia kusitisha akaunti yako wakati wowote kwa kuwasiliana nasi.' },
+          { type: 'paragraph', text: 'Tunahifadhi haki ya kusimamisha akaunti yako ikiwa unakiuka masharti haya.' },
           { type: 'heading', text: 'Mabadiliko ya Masharti' },
           { type: 'paragraph', text: 'Tunaweza kurekebisha masharti haya wakati wowote. Kuendelea kutumia huduma kunaonyesha kukubali masharti yaliyosasishwa.' },
           { type: 'heading', text: 'Sheria Inayotumika' },
           { type: 'paragraph', text: 'Masharti haya yanatawaliwa na sheria za Jamhuri ya Muungano wa Tanzania.' },
           { type: 'heading', text: 'Mawasiliano' },
-          { type: 'paragraph', text: 'Ikiwa una maswali yoyote kuhusu Masharti haya ya Huduma, tafadhali wasiliana nasi kwa info@bulkysms.com.' }
+          { type: 'paragraph', text: 'Ikiwa una maswali, tafadhali wasiliana nasi kwa info@bulkysms.com.' }
         ]
       },
       contact: {
@@ -590,7 +594,7 @@ Asante kwa nia yako ya kujiunga na Bulkysms. Tunatazamia kufanya kazi nawe katik
       },
       footer: {
         brand: 'Dar es Salaam, Tanzania',
-        brandDesc: 'Suluhisho za SMS na WhatsApp kwa biashara.',
+        brandDesc: 'Suluhisho za SMS na WhatsApp kwa biashara duniani.',
         solutions: 'Huduma',
         company: 'Kampuni',
         support: 'Msaada',
@@ -626,7 +630,7 @@ Asante kwa nia yako ya kujiunga na Bulkysms. Tunatazamia kufanya kazi nawe katik
   };
 
   // ============================================================
-  // RENDER (Privacy & Terms as blog‑style sections)
+  // RENDER
   // ============================================================
   const renderBlogSections = (sections) => {
     return sections.map((section, idx) => {
@@ -668,11 +672,16 @@ Asante kwa nia yako ya kujiunga na Bulkysms. Tunatazamia kufanya kazi nawe katik
         <div className="container hero-grid">
           <div className="hero-content">
             <span className="badge">{lang.hero.badge}</span>
-            <h1>{lang.hero.title} <span className="gold">{lang.hero.titleGold}</span></h1>
+            <h1>
+              {lang.hero.title}
+              <span className="gold">{lang.hero.titleGold}</span>
+              {lang.hero.titleEnd}
+            </h1>
             <p>{lang.hero.subtitle}</p>
             <div className="hero-stats">
               {lang.hero.stats.map((stat, idx) => (
                 <div className="stat-item" key={idx}>
+                  <div className="icon"><i className="fas fa-globe"></i></div>
                   <div className="info"><strong>{stat.value}</strong><span>{stat.label}</span></div>
                 </div>
               ))}
@@ -684,10 +693,11 @@ Asante kwa nia yako ya kujiunga na Bulkysms. Tunatazamia kufanya kazi nawe katik
           </div>
           <div className="hero-visual">
             <div className="hero-card">
-              <div className="stat-row"><span className="label">{lang.hero.card.networks}</span><span className="value">5+</span></div>
-              <div className="stat-row"><span className="label">{lang.hero.card.users}</span><span className="value">60M+</span></div>
+              <div className="stat-row"><span className="label">{lang.hero.card.global}</span><span className="value">213 Countries</span></div>
+              <div className="stat-row"><span className="label">{lang.hero.card.networks}</span><span className="value">800+</span></div>
               <div className="stat-row"><span className="label">{lang.hero.card.speed}</span><span className="value">2.3s</span></div>
-              <div className="stat-row"><span className="label">{lang.hero.card.rate}</span><span className="value">98%</span></div>
+              <div className="stat-row"><span className="label">{lang.hero.card.volume}</span><span className="value">&gt;10M</span></div>
+              <div className="stat-row"><span className="label">{lang.hero.card.rate}</span><span className="value">98.4%</span></div>
               <div className="gold-bar"><div className="fill"></div></div>
               <div className="card-note">{lang.hero.note}</div>
             </div>
@@ -915,7 +925,7 @@ Asante kwa nia yako ya kujiunga na Bulkysms. Tunatazamia kufanya kazi nawe katik
         </div>
       </section>
 
-      {/* ===== ABOUT US ===== */}
+      {/* ===== ABOUT ===== */}
       <section className="about-section" id="about">
         <div className="container">
           <div className="text-center">
@@ -924,9 +934,7 @@ Asante kwa nia yako ya kujiunga na Bulkysms. Tunatazamia kufanya kazi nawe katik
             <p className="section-sub mx-auto">{lang.about.subtitle}</p>
           </div>
           <div className="about-content" style={{ textAlign: 'left', maxWidth: '900px', margin: '40px auto', lineHeight: '1.9' }}>
-            {lang.about.text.split('\n').map((para, idx) => (
-              <p key={idx} style={{ marginBottom: '1rem' }}>{para}</p>
-            ))}
+            {lang.about.text.split('\n').map((para, idx) => <p key={idx} style={{ marginBottom: '1rem' }}>{para}</p>)}
           </div>
         </div>
       </section>
@@ -940,14 +948,12 @@ Asante kwa nia yako ya kujiunga na Bulkysms. Tunatazamia kufanya kazi nawe katik
             <p className="section-sub mx-auto">{lang.careers.subtitle}</p>
           </div>
           <div className="careers-content" style={{ textAlign: 'left', maxWidth: '900px', margin: '40px auto', lineHeight: '1.9' }}>
-            {lang.careers.text.split('\n').map((para, idx) => (
-              <p key={idx} style={{ marginBottom: '1rem' }}>{para}</p>
-            ))}
+            {lang.careers.text.split('\n').map((para, idx) => <p key={idx} style={{ marginBottom: '1rem' }}>{para}</p>)}
           </div>
         </div>
       </section>
 
-      {/* ===== PRIVACY POLICY ===== */}
+      {/* ===== PRIVACY ===== */}
       <section className="privacy-section" id="privacy">
         <div className="container">
           <div className="text-center">
@@ -961,7 +967,7 @@ Asante kwa nia yako ya kujiunga na Bulkysms. Tunatazamia kufanya kazi nawe katik
         </div>
       </section>
 
-      {/* ===== TERMS OF SERVICE ===== */}
+      {/* ===== TERMS ===== */}
       <section className="terms-section" id="terms">
         <div className="container">
           <div className="text-center">
@@ -991,27 +997,15 @@ Asante kwa nia yako ya kujiunga na Bulkysms. Tunatazamia kufanya kazi nawe katik
               <div className="contact-item"><div><strong>{lang.contact.info.email}</strong><a href="mailto:info@bulkysms.com">info@bulkysms.com</a></div></div>
               <div className="contact-item"><div><strong>{lang.contact.info.office}</strong><p>Dar es Salaam, Tanzania</p></div></div>
               <div className="contact-item"><div><strong>{lang.contact.info.hours}</strong><p>{lang.contact.hours[0]}</p><p>{lang.contact.hours[1]}</p></div></div>
-
-              {/* ===== SOCIAL MEDIA WITH ICONS ===== */}
-              <div className="contact-social">
-                <h4>{lang.contact.social}</h4>
+              <div className="contact-social"><h4>{lang.contact.social}</h4>
                 <div className="social-links">
-                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-facebook"></i> Facebook
-                  </a>
-                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-twitter"></i> Twitter
-                  </a>
-                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-instagram"></i> Instagram
-                  </a>
-                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-                    <i className="fab fa-linkedin"></i> LinkedIn
-                  </a>
+                  <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-facebook"></i> Facebook</a>
+                  <a href="https://twitter.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-twitter"></i> Twitter</a>
+                  <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-instagram"></i> Instagram</a>
+                  <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer"><i className="fab fa-linkedin"></i> LinkedIn</a>
                 </div>
               </div>
             </div>
-
             <div className="contact-form-container">
               <div className="contact-form-wrapper">
                 <h3>{lang.contact.form.title}</h3>
