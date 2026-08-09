@@ -146,6 +146,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
 }
 
 .logo {
@@ -190,6 +191,18 @@ a {
   transform: translateY(-2px) !important;
   box-shadow: 0 8px 25px rgba(201, 168, 76, 0.25) !important;
   color: #fff !important;
+}
+
+/* ===== MOBILE MENU TOGGLE ===== */
+.menu-toggle {
+  display: none; /* hidden on desktop */
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 4px 8px;
+  line-height: 1;
 }
 
 /* ===== HERO ===== */
@@ -1511,7 +1524,6 @@ a {
 }
 
 /* ===== WHATSAPP FLOATING BUTTON ===== */
-/* ===== WHATSAPP FLOATING BUTTON ===== */
 .whatsapp-float {
   position: fixed;
   bottom: 30px;
@@ -1631,7 +1643,7 @@ a {
 }
 
 /* ============================================================
-   RESPONSIVE STYLES
+   RESPONSIVE STYLES – INCLUDING HAMBURGER MENU FIX
    ============================================================ */
 @media (max-width: 992px) {
   .hero-content h1 {
@@ -1653,9 +1665,55 @@ a {
   .container {
     padding: 0 20px;
   }
+
+  /* ===== MOBILE MENU ===== */
+  .menu-toggle {
+    display: block; /* Show hamburger on mobile */
+  }
+
   .nav-links {
     display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    background: rgba(249, 247, 244, 0.98);
+    backdrop-filter: blur(10px);
+    padding: 16px 0;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    border-top: 1px solid rgba(201, 168, 76, 0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.04);
   }
+
+  .nav-links.open {
+    display: flex; /* Show when toggled */
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(201, 168, 76, 0.04);
+  }
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+  .nav-links a {
+    display: block;
+    padding: 6px 16px;
+    font-size: 1rem;
+  }
+  .nav-links .nav-cta {
+    background: var(--gold-gradient) !important;
+    color: #fff !important;
+    padding: 10px 24px !important;
+    border-radius: 60px !important;
+    display: inline-block;
+    margin: 8px auto;
+  }
+
+  /* ===== HERO ===== */
   .hero {
     padding: 50px 0 60px;
   }
@@ -1669,6 +1727,29 @@ a {
   .stat-item .info strong {
     font-size: 1.3rem;
   }
+  .hero-actions {
+    flex-direction: column;
+  }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    width: 100%;
+    text-align: center;
+  }
+  .hero-card {
+    padding: 24px 20px;
+  }
+  .hero-video-bg {
+    min-height: auto;
+    padding: 60px 0 80px;
+  }
+  .hero-video-bg .hero-content h1 {
+    color: #fff;
+  }
+  .hero-video-bg .hero-stats {
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  /* ===== SECTIONS ===== */
   .section-title {
     font-size: 1.8rem;
   }
@@ -1687,23 +1768,14 @@ a {
     flex-direction: column;
     gap: 30px;
   }
-  .hero-actions {
-    flex-direction: column;
-  }
-  .hero-actions .btn-primary,
-  .hero-actions .btn-secondary {
-    width: 100%;
-    text-align: center;
-  }
-  .hero-card {
-    padding: 24px 20px;
-  }
   .contact-form-container {
     padding: 24px;
   }
   .steps-grid {
     grid-template-columns: 1fr 1fr;
   }
+
+  /* ===== WHATSAPP BUTTON ===== */
   .whatsapp-float {
     width: 50px;
     height: 50px;
@@ -1714,6 +1786,8 @@ a {
   .whatsapp-text {
     display: none !important;
   }
+
+  /* ===== CONTACT ===== */
   .contact-item {
     flex-direction: column;
     gap: 8px;
@@ -1721,18 +1795,8 @@ a {
   .contact-item i {
     margin-top: 0;
   }
-  .hero-video-bg {
-    min-height: auto;
-    padding: 60px 0 80px;
-  }
-  .hero-video-bg .hero-content h1 {
-    color: #fff;
-  }
-  .hero-video-bg .hero-stats {
-    background: rgba(255, 255, 255, 0.08);
-  }
 
-  /* Blog Responsive */
+  /* ===== BLOG ===== */
   .blog-grid {
     grid-template-columns: 1fr;
   }
@@ -1766,8 +1830,6 @@ a {
   .steps-grid {
     grid-template-columns: 1fr;
   }
-
-  /* Blog Responsive */
   .blog-categories {
     gap: 8px;
   }
