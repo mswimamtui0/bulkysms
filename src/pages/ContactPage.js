@@ -6,6 +6,34 @@ const ContactPage = () => {
   const { language } = useLanguage();
   const t = translations[language];
 
+  // ============================================================
+  // CONTACT FORM - SEND TO WHATSAPP
+  // ============================================================
+  const sendToWhatsApp = (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById('contactFormName').value;
+    const phone = document.getElementById('contactFormPhone').value;
+    const email = document.getElementById('contactFormEmail').value || 'Not provided';
+    const message = document.getElementById('contactFormMessage').value;
+
+    if (!name || !phone || !message) {
+      alert(language === 'en' ? 'Please fill in all required fields.' : 'Tafadhali jaza sehemu zote zinazohitajika.');
+      return;
+    }
+
+    const whatsappNumber = '255757170544';
+    const text = language === 'en'
+      ? `New Bulkysms Inquiry%0A%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0A%0AMessage:%0A${message}`
+      : `Ujumbe Mpya Bulkysms%0A%0AJina: ${name}%0ASimu: ${phone}%0ABarua pepe: ${email}%0A%0AUjumbe:%0A${message}`;
+
+    window.open(`https://wa.me/${whatsappNumber}?text=${text}`, '_blank');
+    document.getElementById('contactForm').reset();
+    alert(language === 'en'
+      ? 'Opening WhatsApp... Our team will respond shortly!'
+      : 'WhatsApp inafungua... Timu yetu itawasiliana nanyi hivi karibuni!');
+  };
+
   return (
     <section className="contact-page" style={{ paddingTop: '100px' }}>
       <div className="container">
@@ -73,18 +101,18 @@ const ContactPage = () => {
             <div className="contact-form-wrapper">
               <h3>{t.contact.form.title}</h3>
               <p className="form-subtitle">{t.contact.form.subtitle}</p>
-              <form className="contact-form" id="contactForm">
+              <form className="contact-form" id="contactForm" onSubmit={sendToWhatsApp}>
                 <div className="form-group">
-                  <input type="text" placeholder={t.contact.form.name} required />
+                  <input type="text" id="contactFormName" placeholder={t.contact.form.name} required />
                 </div>
                 <div className="form-group">
-                  <input type="tel" placeholder={t.contact.form.phone} required />
+                  <input type="tel" id="contactFormPhone" placeholder={t.contact.form.phone} required />
                 </div>
                 <div className="form-group">
-                  <input type="email" placeholder={t.contact.form.email} />
+                  <input type="email" id="contactFormEmail" placeholder={t.contact.form.email} />
                 </div>
                 <div className="form-group">
-                  <textarea placeholder={t.contact.form.message} rows="4" required></textarea>
+                  <textarea id="contactFormMessage" placeholder={t.contact.form.message} rows="4" required></textarea>
                 </div>
                 <button type="submit" className="btn-primary submit-btn">{t.contact.form.button}</button>
               </form>

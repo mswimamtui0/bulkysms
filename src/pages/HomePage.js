@@ -6,6 +6,77 @@ const HomePage = () => {
   const { language } = useLanguage();
   const t = translations[language];
 
+  // ----- LOCAL TANZANIA DATA (override translations) -----
+  const localStats = [
+    { icon: 'fa-network-wired', value: '5+', label: language === 'en' ? 'Mobile Networks' : 'Mitandao ya Simu' },
+    { icon: 'fa-users', value: '60M+', label: language === 'en' ? 'Subscribers' : 'Watumiaji' },
+    { icon: 'fa-check-circle', value: '98%', label: language === 'en' ? 'Delivery Rate' : 'Kiwango cha Uwasilishaji' }
+  ];
+
+  const localCardData = [
+    { label: language === 'en' ? 'Mobile Networks' : 'Mitandao', value: '5+' },
+    { label: language === 'en' ? 'Subscribers' : 'Watumiaji', value: '60M+' },
+    { label: language === 'en' ? 'Average Speed' : 'Kasi ya Uwasilishaji', value: '2.3s' },
+    { label: language === 'en' ? 'Monthly Volume' : 'Kiasi cha Mwezi', value: '>10M' },
+    { label: language === 'en' ? 'Delivery Rate' : 'Kiwango cha Uwasilishaji', value: '98%' }
+  ];
+
+  const localNetworks = [
+    'Vodacom Tanzania',
+    'Airtel Tanzania',
+    'Tigo Tanzania',
+    'Halotel',
+    'TTCL',
+    'Zantel'
+  ];
+
+  const localBadge = language === 'en' ? '✦ SMS & WhatsApp Platform Tanzania' : '✦ Jukwaa la SMS & WhatsApp Tanzania';
+  const localTitle = language === 'en' ? 'Reliable SMS & ' : 'Suluhisho za SMS na ';
+  const localTitleGold = 'WhatsApp';
+  const localTitleEnd = language === 'en' ? ' Solutions for Tanzanian Businesses' : ' kwa Biashara za Tanzania';
+  const localSubtitle = language === 'en'
+    ? 'Send messages to millions of customers across all Tanzanian mobile networks. One account, one dashboard, complete control.'
+    : 'Tuma ujumbe kwa mamilioni ya wateja kupitia mitandao yote ya Tanzania. Akaunti moja, dashibodi moja, udhibiti kamili.';
+
+  // ============================================================
+  // CONTACT FORM - SEND TO WHATSAPP
+  // ============================================================
+  const sendToWhatsApp = (e) => {
+    e.preventDefault();
+
+    // Get form values
+    const name = document.getElementById('formName').value;
+    const phone = document.getElementById('formPhone').value;
+    const email = document.getElementById('formEmail').value || 'Not provided';
+    const message = document.getElementById('formMessage').value;
+
+    // Validate required fields
+    if (!name || !phone || !message) {
+      alert(language === 'en' ? 'Please fill in all required fields.' : 'Tafadhali jaza sehemu zote zinazohitajika.');
+      return;
+    }
+
+    // Your WhatsApp number (with country code, no + or 0)
+    const whatsappNumber = '255757170544';
+
+    // Format the message
+    const text = language === 'en'
+      ? `New Bulkysms Inquiry%0A%0AName: ${name}%0APhone: ${phone}%0AEmail: ${email}%0A%0AMessage:%0A${message}`
+      : `Ujumbe Mpya Bulkysms%0A%0AJina: ${name}%0ASimu: ${phone}%0ABarua pepe: ${email}%0A%0AUjumbe:%0A${message}`;
+
+    // Open WhatsApp
+    const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+    window.open(url, '_blank');
+
+    // Reset form
+    document.getElementById('contactForm').reset();
+
+    // Confirmation
+    alert(language === 'en'
+      ? 'Opening WhatsApp... Our team will respond shortly!'
+      : 'WhatsApp inafungua... Timu yetu itawasiliana nanyi hivi karibuni!');
+  };
+
   return (
     <>
       {/* ===== HERO ===== */}
@@ -18,17 +89,17 @@ const HomePage = () => {
         </div>
         <div className="container hero-grid">
           <div className="hero-content">
-            <span className="badge">{t.hero.badge}</span>
+            <span className="badge">{localBadge}</span>
             <h1>
-              {t.hero.title}
-              <span className="gold">{t.hero.titleGold}</span>
-              {t.hero.titleEnd}
+              {localTitle}
+              <span className="gold">{localTitleGold}</span>
+              {localTitleEnd}
             </h1>
-            <p>{t.hero.subtitle}</p>
+            <p>{localSubtitle}</p>
             <div className="hero-stats">
-              {t.hero.stats.map((stat, idx) => (
+              {localStats.map((stat, idx) => (
                 <div className="stat-item" key={idx}>
-                  <div className="icon"><i className="fas fa-globe"></i></div>
+                  <div className="icon"><i className={`fas ${stat.icon}`}></i></div>
                   <div className="info">
                     <strong>{stat.value}</strong>
                     <span>{stat.label}</span>
@@ -43,28 +114,18 @@ const HomePage = () => {
           </div>
           <div className="hero-visual">
             <div className="hero-card">
-              <div className="stat-row">
-                <span className="label">{t.hero.card.global}</span>
-                <span className="value">213 Countries</span>
-              </div>
-              <div className="stat-row">
-                <span className="label">{t.hero.card.networks}</span>
-                <span className="value">800+</span>
-              </div>
-              <div className="stat-row">
-                <span className="label">{t.hero.card.speed}</span>
-                <span className="value">2.3s</span>
-              </div>
-              <div className="stat-row">
-                <span className="label">{t.hero.card.volume}</span>
-                <span className="value">&gt;10M</span>
-              </div>
-              <div className="stat-row">
-                <span className="label">{t.hero.card.rate}</span>
-                <span className="value">98.4%</span>
-              </div>
+              {localCardData.map((item, idx) => (
+                <div className="stat-row" key={idx}>
+                  <span className="label">{item.label}</span>
+                  <span className="value">{item.value}</span>
+                </div>
+              ))}
               <div className="gold-bar"><div className="fill"></div></div>
-              <div className="card-note">{t.hero.note}</div>
+              <div className="card-note">
+                {language === 'en'
+                  ? 'Enterprise‑grade reliability across all Tanzanian networks'
+                  : 'Uaminifu wa kiwango cha biashara katika mitandao yote ya Tanzania'}
+              </div>
             </div>
           </div>
         </div>
@@ -117,19 +178,26 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== NETWORKS ===== */}
+      {/* ===== TANZANIA NETWORKS ===== */}
       <section className="networks">
         <div className="container">
           <div className="text-center">
-            <span className="section-label">{t.networks.label}</span>
+            <span className="section-label">
+              {language === 'en' ? 'Tanzania Coverage' : 'Ufikiaji Tanzania'}
+            </span>
             <h2 className="section-title">
-              {t.networks.title}
-              <span className="gold">{t.networks.titleGold}</span>
+              {language === 'en' ? 'We Connect to ' : 'Tunaungana na '}
+              <span className="gold">{language === 'en' ? 'All Networks' : 'Mitandao Yote'}</span>
+              {language === 'en' ? ' in Tanzania' : ' nchini Tanzania'}
             </h2>
-            <p className="section-sub mx-auto">{t.networks.subtitle}</p>
+            <p className="section-sub mx-auto">
+              {language === 'en'
+                ? 'Reliable coverage across every region – from Dar es Salaam to the remotest areas.'
+                : 'Ufikiaji wa kuaminika katika kila kanda – kutoka Dar es Salaam hadi maeneo ya mbali zaidi.'}
+            </p>
           </div>
           <div className="network-grid">
-            {t.networks.list.map((n, i) => (
+            {localNetworks.map((n, i) => (
               <span className="network-item" key={i}>{n}</span>
             ))}
           </div>
@@ -275,7 +343,7 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* ===== CONTACT ===== */}
+      {/* ===== CONTACT (NOW WITH WORKING FORM) ===== */}
       <section className="contact-page" id="contact">
         <div className="container">
           <div className="text-center">
@@ -342,18 +410,19 @@ const HomePage = () => {
               <div className="contact-form-wrapper">
                 <h3>{t.contact.form.title}</h3>
                 <p className="form-subtitle">{t.contact.form.subtitle}</p>
-                <form className="contact-form" id="contactForm">
+                {/* ✅ FORM WITH onSubmit HANDLER */}
+                <form className="contact-form" id="contactForm" onSubmit={sendToWhatsApp}>
                   <div className="form-group">
-                    <input type="text" placeholder={t.contact.form.name} required />
+                    <input type="text" id="formName" placeholder={t.contact.form.name} required />
                   </div>
                   <div className="form-group">
-                    <input type="tel" placeholder={t.contact.form.phone} required />
+                    <input type="tel" id="formPhone" placeholder={t.contact.form.phone} required />
                   </div>
                   <div className="form-group">
-                    <input type="email" placeholder={t.contact.form.email} />
+                    <input type="email" id="formEmail" placeholder={t.contact.form.email} />
                   </div>
                   <div className="form-group">
-                    <textarea placeholder={t.contact.form.message} rows="4" required></textarea>
+                    <textarea id="formMessage" placeholder={t.contact.form.message} rows="4" required></textarea>
                   </div>
                   <button type="submit" className="btn-primary submit-btn">{t.contact.form.button}</button>
                 </form>
