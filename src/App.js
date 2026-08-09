@@ -23,22 +23,18 @@ const App = () => {
   const sendToWhatsApp = (e) => {
     e.preventDefault();
     
-    // Get form values
     const name = document.getElementById('formName').value;
     const phone = document.getElementById('formPhone').value;
     const email = document.getElementById('formEmail').value || 'Not provided';
     const message = document.getElementById('formMessage').value;
     
-    // Validate required fields
     if (!name || !phone || !message) {
       alert('⚠️ Please fill in all required fields.');
       return;
     }
     
-    // YOUR WHATSAPP NUMBER (Change this to your number)
     const whatsappNumber = '255757170544';
     
-    // Format the message
     const text = `*New Bulkysms Inquiry*%0A%0A
 *Name:* ${name}%0A
 *Phone:* ${phone}%0A
@@ -46,14 +42,10 @@ const App = () => {
 %0A
 *Message:*%0A${message}`;
     
-    // Open WhatsApp directly
     const url = `https://wa.me/${whatsappNumber}?text=${text}`;
     window.open(url, '_blank');
     
-    // Reset form
     document.getElementById('contactForm').reset();
-    
-    // Show confirmation
     alert('✅ Opening WhatsApp... Our team will respond shortly!');
   };
 
@@ -378,6 +370,86 @@ const App = () => {
         </div>
       </section>
 
+      {/* ===== ABOUT US ===== */}
+      <section className="about-section" id="about" style={{ padding: '80px 0', background: '#ffffff', borderTop: '1px solid rgba(201, 168, 76, 0.06)' }}>
+        <div className="container">
+          <div className="text-center">
+            <span className="section-label">About Us</span>
+            <h2 className="section-title">Who <span className="gold">We Are</span></h2>
+            <p className="section-sub mx-auto">Bulkysms is a trusted messaging platform serving businesses across Tanzania and beyond.</p>
+          </div>
+          <div style={{ maxWidth: '800px', margin: '40px auto 0', textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+              We help businesses connect with their customers through reliable SMS and WhatsApp messaging solutions. 
+              Our platform is designed for simplicity, reliability, and scale – so you can focus on growing your business.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== CAREERS ===== */}
+      <section className="careers-section" id="careers" style={{ padding: '80px 0', background: 'var(--bg-primary)', borderTop: '1px solid rgba(201, 168, 76, 0.06)' }}>
+        <div className="container">
+          <div className="text-center">
+            <span className="section-label">Careers</span>
+            <h2 className="section-title">Join Our <span className="gold">Team</span></h2>
+            <p className="section-sub mx-auto">We're always looking for talented people to help us build the future of business messaging.</p>
+          </div>
+          <div style={{ maxWidth: '700px', margin: '40px auto 0', textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)' }}>No current openings, but we'd love to hear from you. Send your CV to <a href="mailto:careers@bulkysms.com" style={{ color: 'var(--gold-dark)' }}>careers@bulkysms.com</a></p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== BLOG ===== */}
+      <section className="blog-section" id="blog" style={{ padding: '80px 0', background: '#ffffff', borderTop: '1px solid rgba(201, 168, 76, 0.06)' }}>
+        <div className="container">
+          <div className="text-center">
+            <span className="section-label">Blog</span>
+            <h2 className="section-title">Latest <span className="gold">Insights</span></h2>
+            <p className="section-sub mx-auto">Tips, guides, and news about SMS marketing and business communication.</p>
+          </div>
+          <div style={{ maxWidth: '700px', margin: '40px auto 0', textAlign: 'center' }}>
+            <p style={{ color: 'var(--text-secondary)' }}>Coming soon! Stay tuned for articles and updates.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== PRIVACY POLICY ===== */}
+      <section className="privacy-section" id="privacy" style={{ padding: '80px 0', background: 'var(--bg-primary)', borderTop: '1px solid rgba(201, 168, 76, 0.06)' }}>
+        <div className="container">
+          <div className="text-center">
+            <span className="section-label">Privacy</span>
+            <h2 className="section-title">Privacy <span className="gold">Policy</span></h2>
+            <p className="section-sub mx-auto">Your data is safe with us.</p>
+          </div>
+          <div style={{ maxWidth: '800px', margin: '40px auto 0', color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+            <p>We collect minimal data to provide our messaging services. We do not share your information with third parties without your explicit consent. All data is encrypted in transit and at rest.</p>
+            <ul style={{ marginTop: '20px', listStyle: 'none', padding: 0 }}>
+              <li>✅ Data encryption</li>
+              <li>✅ No data sharing</li>
+              <li>✅ GDPR compliant</li>
+              <li>✅ Regular security audits</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== TERMS OF SERVICE ===== */}
+      <section className="terms-section" id="terms" style={{ padding: '80px 0', background: '#ffffff', borderTop: '1px solid rgba(201, 168, 76, 0.06)' }}>
+        <div className="container">
+          <div className="text-center">
+            <span className="section-label">Terms</span>
+            <h2 className="section-title">Terms of <span className="gold">Service</span></h2>
+            <p className="section-sub mx-auto">By using Bulkysms, you agree to our terms.</p>
+          </div>
+          <div style={{ maxWidth: '800px', margin: '40px auto 0', color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+            <p>Bulkysms provides messaging services subject to the following terms. You agree not to send spam or illegal content. We reserve the right to suspend accounts that violate our policies.</p>
+            <p style={{ marginTop: '20px' }}>For full terms, please <a href="#contact" style={{ color: 'var(--gold-dark)' }}>contact us</a>.</p>
+          </div>
+        </div>
+      </section>
+
       {/* ============================================================
           CONTACT PAGE - WITHOUT SERVICE DROPDOWN
           ============================================================ */}
@@ -390,7 +462,6 @@ const App = () => {
           </div>
           
           <div className="contact-grid">
-            {/* LEFT: Contact Information */}
             <div className="contact-info">
               <h3>Contact Information</h3>
               
@@ -454,7 +525,6 @@ const App = () => {
               </div>
             </div>
 
-            {/* RIGHT: Contact Form (No dropdown) */}
             <div className="contact-form-container">
               <div className="contact-form-wrapper">
                 <h3>Send Us a Message</h3>
@@ -506,9 +576,9 @@ const App = () => {
             
             <div className="footer-links">
               <h5>Company</h5>
-              <a href="#contact">About Us</a>
-              <a href="#contact">Careers</a>
-              <a href="#contact">Blog</a>
+              <a href="#about">About Us</a>
+              <a href="#careers">Careers</a>
+              <a href="#blog">Blog</a>
               <a href="#contact">Contact</a>
             </div>
             
