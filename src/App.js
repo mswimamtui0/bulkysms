@@ -4,6 +4,53 @@ import './App.css';
 const App = () => {
   const [activeFaq, setActiveFaq] = useState(0);
   const [scrolled, setScrolled] = useState(false);
+  const [expandedPost, setExpandedPost] = useState(null);
+  const [blogPosts, setBlogPosts] = useState([
+    {
+      id: 1,
+      title: 'Why Bulk SMS is the Most Effective Marketing Channel in Tanzania',
+      excerpt: 'Discover why businesses across Tanzania are choosing bulk SMS over social media and email to reach their customers instantly.',
+      content: 'In today\'s fast-paced digital world, businesses need to communicate with customers quickly and effectively. Bulk SMS offers an unparalleled 98% open rate compared to email\'s 20%...',
+      category: 'Marketing Tips',
+      date: 'August 9, 2026',
+      author: 'Bulkysms Team',
+      readTime: '5 min read',
+      image: '📱'
+    },
+    {
+      id: 2,
+      title: 'WhatsApp Business vs. SMS: Which is Better for Your Business?',
+      excerpt: 'Compare WhatsApp Business and traditional SMS to determine the best communication channel for your specific business needs.',
+      content: 'Both WhatsApp Business and SMS have unique strengths. SMS excels in delivery reliability and reach, while WhatsApp offers rich media and interactive features. Here\'s how to choose...',
+      category: 'WhatsApp Business',
+      date: 'August 8, 2026',
+      author: 'Bulkysms Team',
+      readTime: '7 min read',
+      image: '💬'
+    },
+    {
+      id: 3,
+      title: 'How to Boost Sales by 40% with SMS Marketing',
+      excerpt: 'Learn proven strategies to increase your sales using targeted SMS campaigns that convert customers into loyal buyers.',
+      content: 'SMS marketing has proven to be one of the most effective sales channels. This guide covers segmentation, timing, and crafting messages that convert...',
+      category: 'Sales Strategies',
+      date: 'August 7, 2026',
+      author: 'Bulkysms Team',
+      readTime: '6 min read',
+      image: '📈'
+    },
+    {
+      id: 4,
+      title: 'OTP Delivery: Why Businesses Need Secure Authentication',
+      excerpt: 'Learn why One-Time Password (OTP) delivery via SMS and WhatsApp is essential for securing your customers\' accounts.',
+      content: 'Cyber threats are on the rise. OTP delivery via SMS and WhatsApp provides an additional layer of security that protects both your business and your customers...',
+      category: 'Security',
+      date: 'August 6, 2026',
+      author: 'Bulkysms Team',
+      readTime: '4 min read',
+      image: '🔐'
+    }
+  ]);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,8 +64,12 @@ const App = () => {
     setActiveFaq(activeFaq === index ? null : index);
   };
 
+  const toggleBlogPost = (id) => {
+    setExpandedPost(expandedPost === id ? null : id);
+  };
+
   // ============================================================
-  // ✅ CONTACT FORM - DIRECT WHATSAPP (NO SERVICE DROPDOWN)
+  // ✅ CONTACT FORM - DIRECT WHATSAPP
   // ============================================================
   const sendToWhatsApp = (e) => {
     e.preventDefault();
@@ -132,6 +183,7 @@ const App = () => {
             <li><a href="#services">Services</a></li>
             <li><a href="#pricing">Pricing</a></li>
             <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#blog">Blog</a></li>
             <li><a href="#contact">Contact</a></li>
             <li><a href="#faq">Help</a></li>
             <li><a href="#contact" className="nav-cta">Contact Us</a></li>
@@ -349,6 +401,83 @@ const App = () => {
         </div>
       </section>
 
+      {/* ============================================================
+          PROFESSIONAL BLOG SECTION - FULL FUNCTIONALITY
+          ============================================================ */}
+      <section className="blog-section" id="blog">
+        <div className="container">
+          <div className="text-center">
+            <span className="section-label">Insights</span>
+            <h2 className="section-title">Latest <span className="gold">Blog</span> Posts</h2>
+            <p className="section-sub mx-auto">Expert tips, guides, and insights to help you grow your business with SMS and WhatsApp marketing.</p>
+          </div>
+
+          {/* Blog Categories */}
+          <div className="blog-categories">
+            <span className="category active">All</span>
+            <span className="category">Marketing Tips</span>
+            <span className="category">WhatsApp Business</span>
+            <span className="category">Sales Strategies</span>
+            <span className="category">Security</span>
+          </div>
+
+          {/* Blog Posts Grid */}
+          <div className="blog-grid">
+            {blogPosts.map((post) => (
+              <div className={`blog-card ${expandedPost === post.id ? 'expanded' : ''}`} key={post.id}>
+                <div className="blog-card-header">
+                  <div className="blog-image">{post.image}</div>
+                  <div className="blog-meta">
+                    <span className="blog-category">{post.category}</span>
+                    <span className="blog-date">{post.date}</span>
+                  </div>
+                </div>
+                <div className="blog-card-body">
+                  <h3 className="blog-title">{post.title}</h3>
+                  <p className="blog-excerpt">{post.excerpt}</p>
+                  {expandedPost === post.id && (
+                    <div className="blog-full-content">
+                      <p>{post.content}</p>
+                      <div className="blog-cta">
+                        <p>Want to learn more about our services?</p>
+                        <a href="#contact" className="btn-primary" style={{ padding: '10px 28px', fontSize: '0.85rem' }}>
+                          Contact Our Team
+                        </a>
+                      </div>
+                    </div>
+                  )}
+                </div>
+                <div className="blog-card-footer">
+                  <div className="blog-author">
+                    <span className="author-name">{post.author}</span>
+                    <span className="read-time">{post.readTime}</span>
+                  </div>
+                  <button 
+                    className="read-more-btn"
+                    onClick={() => toggleBlogPost(post.id)}
+                  >
+                    {expandedPost === post.id ? 'Read Less' : 'Read More'}
+                    <i className={`fas ${expandedPost === post.id ? 'fa-chevron-up' : 'fa-chevron-down'}`}></i>
+                  </button>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* Newsletter Signup */}
+          <div className="blog-newsletter">
+            <div className="newsletter-content">
+              <h3>Subscribe to Our Newsletter</h3>
+              <p>Get the latest SMS marketing tips and updates delivered to your inbox.</p>
+              <form className="newsletter-form" onSubmit={(e) => e.preventDefault()}>
+                <input type="email" placeholder="Enter your email" required />
+                <button type="submit" className="btn-primary">Subscribe</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ===== FAQ ===== */}
       <section className="faq" id="faq">
         <div className="container">
@@ -371,61 +500,45 @@ const App = () => {
       </section>
 
       {/* ===== ABOUT US ===== */}
-      <section className="about-section" id="about" style={{ padding: '80px 0', background: '#ffffff', borderTop: '1px solid rgba(201, 168, 76, 0.06)' }}>
+      <section className="about-section" id="about">
         <div className="container">
           <div className="text-center">
             <span className="section-label">About Us</span>
             <h2 className="section-title">Who <span className="gold">We Are</span></h2>
             <p className="section-sub mx-auto">Bulkysms is a trusted messaging platform serving businesses across Tanzania and beyond.</p>
           </div>
-          <div style={{ maxWidth: '800px', margin: '40px auto 0', textAlign: 'center' }}>
-            <p style={{ color: 'var(--text-secondary)', lineHeight: '1.8' }}>
-              We help businesses connect with their customers through reliable SMS and WhatsApp messaging solutions. 
-              Our platform is designed for simplicity, reliability, and scale – so you can focus on growing your business.
-            </p>
+          <div className="about-content">
+            <p>We help businesses connect with their customers through reliable SMS and WhatsApp messaging solutions. 
+            Our platform is designed for simplicity, reliability, and scale – so you can focus on growing your business.</p>
           </div>
         </div>
       </section>
 
       {/* ===== CAREERS ===== */}
-      <section className="careers-section" id="careers" style={{ padding: '80px 0', background: 'var(--bg-primary)', borderTop: '1px solid rgba(201, 168, 76, 0.06)' }}>
+      <section className="careers-section" id="careers">
         <div className="container">
           <div className="text-center">
             <span className="section-label">Careers</span>
             <h2 className="section-title">Join Our <span className="gold">Team</span></h2>
             <p className="section-sub mx-auto">We're always looking for talented people to help us build the future of business messaging.</p>
           </div>
-          <div style={{ maxWidth: '700px', margin: '40px auto 0', textAlign: 'center' }}>
-            <p style={{ color: 'var(--text-secondary)' }}>No current openings, but we'd love to hear from you. Send your CV to <a href="mailto:careers@bulkysms.com" style={{ color: 'var(--gold-dark)' }}>careers@bulkysms.com</a></p>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== BLOG ===== */}
-      <section className="blog-section" id="blog" style={{ padding: '80px 0', background: '#ffffff', borderTop: '1px solid rgba(201, 168, 76, 0.06)' }}>
-        <div className="container">
-          <div className="text-center">
-            <span className="section-label">Blog</span>
-            <h2 className="section-title">Latest <span className="gold">Insights</span></h2>
-            <p className="section-sub mx-auto">Tips, guides, and news about SMS marketing and business communication.</p>
-          </div>
-          <div style={{ maxWidth: '700px', margin: '40px auto 0', textAlign: 'center' }}>
-            <p style={{ color: 'var(--text-secondary)' }}>Coming soon! Stay tuned for articles and updates.</p>
+          <div className="careers-content">
+            <p>No current openings, but we'd love to hear from you. Send your CV to <a href="mailto:careers@bulkysms.com">careers@bulkysms.com</a></p>
           </div>
         </div>
       </section>
 
       {/* ===== PRIVACY POLICY ===== */}
-      <section className="privacy-section" id="privacy" style={{ padding: '80px 0', background: 'var(--bg-primary)', borderTop: '1px solid rgba(201, 168, 76, 0.06)' }}>
+      <section className="privacy-section" id="privacy">
         <div className="container">
           <div className="text-center">
             <span className="section-label">Privacy</span>
             <h2 className="section-title">Privacy <span className="gold">Policy</span></h2>
             <p className="section-sub mx-auto">Your data is safe with us.</p>
           </div>
-          <div style={{ maxWidth: '800px', margin: '40px auto 0', color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+          <div className="privacy-content">
             <p>We collect minimal data to provide our messaging services. We do not share your information with third parties without your explicit consent. All data is encrypted in transit and at rest.</p>
-            <ul style={{ marginTop: '20px', listStyle: 'none', padding: 0 }}>
+            <ul>
               <li>✅ Data encryption</li>
               <li>✅ No data sharing</li>
               <li>✅ GDPR compliant</li>
@@ -436,22 +549,22 @@ const App = () => {
       </section>
 
       {/* ===== TERMS OF SERVICE ===== */}
-      <section className="terms-section" id="terms" style={{ padding: '80px 0', background: '#ffffff', borderTop: '1px solid rgba(201, 168, 76, 0.06)' }}>
+      <section className="terms-section" id="terms">
         <div className="container">
           <div className="text-center">
             <span className="section-label">Terms</span>
             <h2 className="section-title">Terms of <span className="gold">Service</span></h2>
             <p className="section-sub mx-auto">By using Bulkysms, you agree to our terms.</p>
           </div>
-          <div style={{ maxWidth: '800px', margin: '40px auto 0', color: 'var(--text-secondary)', lineHeight: '1.8' }}>
+          <div className="terms-content">
             <p>Bulkysms provides messaging services subject to the following terms. You agree not to send spam or illegal content. We reserve the right to suspend accounts that violate our policies.</p>
-            <p style={{ marginTop: '20px' }}>For full terms, please <a href="#contact" style={{ color: 'var(--gold-dark)' }}>contact us</a>.</p>
+            <p>For full terms, please <a href="#contact">contact us</a>.</p>
           </div>
         </div>
       </section>
 
       {/* ============================================================
-          CONTACT PAGE - WITHOUT SERVICE DROPDOWN
+          CONTACT PAGE
           ============================================================ */}
       <section className="contact-page" id="contact">
         <div className="container">
