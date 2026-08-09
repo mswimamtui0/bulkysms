@@ -1511,6 +1511,7 @@ a {
 }
 
 /* ===== WHATSAPP FLOATING BUTTON ===== */
+/* ===== WHATSAPP FLOATING BUTTON ===== */
 .whatsapp-float {
   position: fixed;
   bottom: 30px;
@@ -1523,11 +1524,11 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
   box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
   z-index: 999;
   transition: all 0.3s ease;
   text-decoration: none;
+  padding: 0; /* removes any default padding */
 }
 
 .whatsapp-float:hover {
@@ -1536,24 +1537,12 @@ a {
   color: #fff;
 }
 
-.whatsapp-text {
-  display: none;
-  position: absolute;
-  right: 70px;
-  background: #fff;
-  color: #1a1a1a;
-  padding: 8px 16px;
-  border-radius: 8px;
-  font-size: 0.85rem;
-  font-weight: 500;
-  white-space: nowrap;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-}
-
-.whatsapp-float:hover .whatsapp-text {
+/* Ensures the icon stays perfectly sized inside the circle */
+.whatsapp-float svg {
+  width: 32px;
+  height: 32px;
   display: block;
 }
-
 /* ===== FOOTER ===== */
 .footer {
   background: #1a1a1a;
