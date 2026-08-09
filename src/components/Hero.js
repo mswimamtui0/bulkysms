@@ -7,7 +7,7 @@ const Hero = () => {
         <div className="hero-content">
           <span className="badge">✦ Global SMS &amp; WhatsApp Platform</span>
           <h1>Reliable SMS &amp; <span className="gold">WhatsApp</span> Solutions for Business</h1>
-          <p>Send messages to over 800 networks worldwide. One account, one dashboard, complete control.</p>
+          <p>Send messages and OTP to over 800 networks worldwide. One account, one dashboard, complete control.</p>
           
           <div className="hero-stats">
             <div className="stat-item">
