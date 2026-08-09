@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import QRCode from 'qrcode.react'; // ✅ Import QRCode
+import { QRCodeSVG } from 'qrcode.react'; // ✅ Correct named import
 
 const Footer = () => {
   return (
@@ -43,10 +43,10 @@ const Footer = () => {
           {/* ===== QR CODE ===== */}
           <div className="footer-links">
             <h5>Scan to Visit</h5>
-            <QRCode 
+            <QRCodeSVG 
               value="https://bulkysms.vercel.app" 
-              size={150} 
-              style={{ borderRadius: '8px', margin: '0 auto' }}
+              size={150}
+              style={{ borderRadius: '8px', margin: '0 auto', display: 'block' }}
             />
             <p style={{ fontSize: '0.7rem', marginTop: '8px', color: '#aaa' }}>
               Scan with your phone
