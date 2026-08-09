@@ -696,15 +696,17 @@ Message:%0A${message}`;
       </footer>
 
       {/* ===== FLOATING WHATSAPP BUTTON ===== */}
-      <a 
-        href="https://wa.me/255757170544?text=Hello!%20I%20want%20to%20learn%20more%20about%20Bulkysms%20services."
-        target="_blank"
-        rel="noopener noreferrer"
-        className="whatsapp-float"
-        aria-label="Chat on WhatsApp"
-      >
-        Chat with us
-      </a>
+      {/* ===== FLOATING WHATSAPP BUTTON ===== */}
+<a 
+  href="https://wa.me/255757170544?text=Hello!%20I%20want%20to%20learn%20more%20about%20Bulkysms%20services."
+  target="_blank"
+  rel="noopener noreferrer"
+  className="whatsapp-float"
+  aria-label="Chat on WhatsApp"
+>
+  <i className="fab fa-whatsapp"></i>
+  <span className="whatsapp-text">Chat with us</span>
+</a>
     </div>
   );
 };
