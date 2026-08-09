@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
 
 const HelpPage = () => {
+  const { language } = useLanguage();
+  const t = translations[language];
   const [activeFaq, setActiveFaq] = useState(0);
-  const faqs = [
-    { q: 'What is Bulkysms?', a: 'Bulkysms is a business messaging platform that allows you to send SMS and WhatsApp messages to customers worldwide. We provide reliable delivery across 800+ networks in 213 countries.' },
-    { q: 'How do I send messages?', a: 'Simply upload your contact list, compose your message, and send. The platform handles delivery and provides real-time reports on delivery status.' },
-    { q: 'Can I integrate Bulkysms with my systems?', a: 'Yes, we offer a comprehensive REST API that enables integration with your CRM, ERP, or any custom application. Documentation is available to help you get started quickly.' },
-    { q: 'What support do you provide?', a: 'We offer dedicated support via email and phone. Enterprise clients receive priority support and account management.' },
-    { q: 'Is my data secure?', a: 'Yes, we use encryption and follow industry best practices to protect your data. Our systems are regularly audited for security compliance.' }
-  ];
 
   const toggleFaq = (index) => {
     setActiveFaq(activeFaq === index ? null : index);
@@ -18,12 +15,15 @@ const HelpPage = () => {
     <section className="faq" style={{ paddingTop: '100px' }}>
       <div className="container">
         <div className="text-center">
-          <span className="section-label">Help & Support</span>
-          <h2 className="section-title">Frequently <span className="gold">Asked Questions</span></h2>
-          <p className="section-sub mx-auto">Everything you need to know about Bulkysms.</p>
+          <span className="section-label">{t.faq.label}</span>
+          <h2 className="section-title">
+            {t.faq.title}
+            <span className="gold">{t.faq.titleGold}</span>
+          </h2>
+          <p className="section-sub mx-auto">{t.faq.subtitle}</p>
         </div>
         <div className="faq-list">
-          {faqs.map((faq, i) => (
+          {t.faq.list.map((faq, i) => (
             <div className={`faq-item ${activeFaq === i ? 'active' : ''}`} key={i} onClick={() => toggleFaq(i)}>
               <div className="faq-question">
                 {faq.q}
@@ -34,7 +34,12 @@ const HelpPage = () => {
           ))}
         </div>
         <div className="text-center" style={{ marginTop: '40px' }}>
-          <p>Still have questions? <a href="/contact" className="btn-primary" style={{ display: 'inline-block', marginTop: '10px' }}>Contact Support</a></p>
+          <p>
+            {language === 'en' ? 'Still have questions?' : 'Bado una maswali?'}
+            <a href="/contact" className="btn-primary" style={{ display: 'inline-block', marginTop: '10px' }}>
+              {language === 'en' ? 'Contact Support' : 'Wasiliana Nasi'}
+            </a>
+          </p>
         </div>
       </div>
     </section>

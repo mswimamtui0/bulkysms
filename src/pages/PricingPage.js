@@ -1,22 +1,24 @@
 import React from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import { translations } from '../translations';
 
 const PricingPage = () => {
-  const pricingPlans = [
-    { name: 'Internet SMS', price: 'TZS 16', sub: '/ msg', desc: 'Volume-based pricing for local delivery', features: ['1 – 5,000: TZS 16', '5,001 – 50,000: TZS 15', '50,001 – 100,000: TZS 14', '100,001 – 500,000: TZS 13', '500,001+: TZS 12'], featured: false },
-    { name: '⭐ Mobile SMS', price: 'TZS 5', sub: 'flat rate', desc: 'Global coverage using your SIM cards', features: ['One flat rate worldwide', 'Two-way communication', 'Multi-SIM management', 'API integration ready'], featured: true, note: 'SIM carrier subscription required' },
-    { name: 'WhatsApp SMS', price: 'TZS 12', sub: 'flat rate', desc: 'Global reach with Meta integration', features: ['Multi-account support', 'Template management', 'Campaign automation', 'Analytics dashboard'], featured: false, note: 'Additional Meta fees apply' }
-  ];
+  const { language } = useLanguage();
+  const t = translations[language];
 
   return (
     <section className="pricing" style={{ paddingTop: '100px' }}>
       <div className="container">
         <div className="text-center">
-          <span className="section-label">Pricing</span>
-          <h2 className="section-title">Simple, <span className="gold">Transparent</span> Plans</h2>
-          <p className="section-sub mx-auto">Competitive rates with volume discounts. Choose what fits your business.</p>
+          <span className="section-label">{t.pricing.label}</span>
+          <h2 className="section-title">
+            {t.pricing.title}
+            <span className="gold">{t.pricing.titleGold}</span>
+          </h2>
+          <p className="section-sub mx-auto">{t.pricing.subtitle}</p>
         </div>
         <div className="pricing-wrapper">
-          {pricingPlans.map((plan, i) => (
+          {t.pricing.plans.map((plan, i) => (
             <div className={`pricing-card ${plan.featured ? 'featured' : ''}`} key={i}>
               <div className="plan">{plan.name}</div>
               <div className="price">{plan.price} <small>{plan.sub}</small></div>
@@ -29,7 +31,7 @@ const PricingPage = () => {
             </div>
           ))}
         </div>
-        <div className="pricing-note">All prices in TZS. Enterprise discounts available for high-volume clients.</div>
+        <div className="pricing-note">{t.pricing.note}</div>
       </div>
     </section>
   );
