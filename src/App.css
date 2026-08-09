@@ -1376,30 +1376,41 @@ a {
   color: var(--text-primary);
 }
 
+/* ===== SOCIAL MEDIA LINKS ===== */
 .social-links {
   display: flex;
-  gap: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
 }
 
 .social-links a {
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: var(--bg-primary);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  justify-content: center;
+  gap: 8px;
+  padding: 10px 18px;
+  border-radius: 40px;
+  background: var(--bg-primary);
   color: var(--text-secondary);
-  font-size: 1.2rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-decoration: none;
   transition: all 0.3s ease;
-  border: 1px solid rgba(201, 168, 76, 0.04);
+  border: 1px solid rgba(201, 168, 76, 0.08);
+}
+
+.social-links a i {
+  font-size: 1.2rem;
+  width: 1.2rem;
+  text-align: center;
 }
 
 .social-links a:hover {
   background: var(--gold-gradient);
   color: #fff;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(201, 168, 76, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(201, 168, 76, 0.15);
+  border-color: transparent;
 }
 
 .contact-form-container {
@@ -1796,6 +1807,18 @@ a {
     margin-top: 0;
   }
 
+  /* ===== SOCIAL MEDIA RESPONSIVE ===== */
+  .social-links {
+    gap: 8px;
+  }
+  .social-links a {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+  .social-links a i {
+    font-size: 1rem;
+  }
+
   /* ===== BLOG ===== */
   .blog-grid {
     grid-template-columns: 1fr;
@@ -1840,4 +1863,31 @@ a {
   .blog-title {
     font-size: 1rem;
   }
+  .social-links a {
+    padding: 6px 10px;
+    font-size: 0.7rem;
+  }
+  .social-links a i {
+    font-size: 0.9rem;
+  }
+}
+
+/* ===== LANGUAGE TOGGLE ===== */
+.lang-toggle {
+  background: var(--gold-gradient);
+  color: #fff;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 40px;
+  font-weight: 600;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.lang-toggle:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(201, 168, 76, 0.3);
 }
